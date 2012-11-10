@@ -1,0 +1,9 @@
+.\Obj\lpc17xx_nvic.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_nvic.c
+.\Obj\lpc17xx_nvic.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_nvic.h
+.\Obj\lpc17xx_nvic.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\LPC17xx.h
+.\Obj\lpc17xx_nvic.o: C:\Keil\ARM\CMSIS\Include\core_cm3.h
+.\Obj\lpc17xx_nvic.o: C:\Keil\ARM\RV31\Inc\stdint.h
+.\Obj\lpc17xx_nvic.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\Obj\lpc17xx_nvic.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\Obj\lpc17xx_nvic.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.h
+.\Obj\lpc17xx_nvic.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc_types.h

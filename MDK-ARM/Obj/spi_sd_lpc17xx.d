@@ -1,0 +1,16 @@
+.\Obj\spi_sd_lpc17xx.o: ..\..\lpc17xx_chanfat_mthomas\project\Libraries\fat_sd\spi_sd_lpc17xx.c
+.\Obj\spi_sd_lpc17xx.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc_types.h
+.\Obj\spi_sd_lpc17xx.o: C:\Keil\ARM\RV31\Inc\stdint.h
+.\Obj\spi_sd_lpc17xx.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_pinsel.h
+.\Obj\spi_sd_lpc17xx.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\lpc17xx.h
+.\Obj\spi_sd_lpc17xx.o: C:\Keil\ARM\CMSIS\Include\core_cm3.h
+.\Obj\spi_sd_lpc17xx.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\Obj\spi_sd_lpc17xx.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\Obj\spi_sd_lpc17xx.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.h
+.\Obj\spi_sd_lpc17xx.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_gpio.h
+.\Obj\spi_sd_lpc17xx.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_ssp.h
+.\Obj\spi_sd_lpc17xx.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_clkpwr.h
+.\Obj\spi_sd_lpc17xx.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_gpdma.h
+.\Obj\spi_sd_lpc17xx.o: ..\..\lpc17xx_chanfat_mthomas\project\Libraries\fat_sd\integer.h
+.\Obj\spi_sd_lpc17xx.o: ..\..\lpc17xx_chanfat_mthomas\project\Libraries\fat_sd\spi_sd_lpc17xx.h
+.\Obj\spi_sd_lpc17xx.o: ..\..\lpc17xx_chanfat_mthomas\project\Libraries\fat_sd\diskio.h

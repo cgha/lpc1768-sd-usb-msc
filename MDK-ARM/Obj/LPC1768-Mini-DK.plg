@@ -1,0 +1,55 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+J:\lpc1768\实验例程-Example\miniDK\USBDevice MassStorage\MDK-ARM\LPC1768-Mini-DK.uvproj
+Project File Date:  11/09/2012
+
+<h2>Output:</h2>
+Load "J:\\lpc1768\\实验例程-Example\\miniDK\\USBDevice MassStorage\\MDK-ARM\\Obj\\LPC1768-Mini-DK.AXF" 
+Load "J:\\lpc1768\\实验例程-Example\\miniDK\\USBDevice MassStorage\\MDK-ARM\\Obj\\LPC1768-Mini-DK.AXF" 
+* JLink Info: Device "LPC1768" selected (512 KB flash, 32 KB RAM).
+Set JLink Project File to "J:\lpc1768\实验例程-Example\miniDK\USBDevice MassStorage\MDK-ARM\JLinkSettings.ini"
+Load "J:\\lpc1768\\实验例程-Example\\miniDK\\USBDevice MassStorage\\MDK-ARM\\Obj\\LPC1768-Mini-DK.AXF" 
+* JLink Info: Device "LPC1768" selected (512 KB flash, 32 KB RAM).
+Set JLink Project File to "J:\lpc1768\实验例程-Example\miniDK\USBDevice MassStorage\MDK-ARM\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.36l, compiled Dec  2 2011 18:52:36
+Firmware: J-Link ARM V8 compiled Dec  1 2015 11:42:48
+Hardware: V8.00
+S/N : 20080643 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 4, IRPrint = 0x01
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 4, IRPrint = 0x01
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: LPC1768
+VTarget = 3.352V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.

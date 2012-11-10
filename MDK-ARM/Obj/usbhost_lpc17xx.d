@@ -1,0 +1,12 @@
+.\Obj\usbhost_lpc17xx.o: usbhost_lpc17xx.c
+.\Obj\usbhost_lpc17xx.o: usbhost_lpc17xx.h
+.\Obj\usbhost_lpc17xx.o: C:\Keil\ARM\RV31\Inc\stdio.h
+.\Obj\usbhost_lpc17xx.o: ..\..\USBHostLite_LPC17xx.001(FATFS)\USER\UsbHost\Include\usbhost_inc.h
+.\Obj\usbhost_lpc17xx.o: ..\..\USBHostLite_LPC17xx.001(FATFS)\USER\UsbHost\Include\usbhost_cpu.h
+.\Obj\usbhost_lpc17xx.o: ..\..\USBHostLite_LPC17xx.001(FATFS)\USER\UsbHost\Include\usbhost_err.h
+.\Obj\usbhost_lpc17xx.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\LPC17xx.h
+.\Obj\usbhost_lpc17xx.o: C:\Keil\ARM\CMSIS\Include\core_cm3.h
+.\Obj\usbhost_lpc17xx.o: C:\Keil\ARM\RV31\Inc\stdint.h
+.\Obj\usbhost_lpc17xx.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\Obj\usbhost_lpc17xx.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\Obj\usbhost_lpc17xx.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.h

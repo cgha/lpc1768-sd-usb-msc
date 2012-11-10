@@ -1,0 +1,11 @@
+.\Obj\lpc17xx_gpdma.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_gpdma.c
+.\Obj\lpc17xx_gpdma.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_gpdma.h
+.\Obj\lpc17xx_gpdma.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\LPC17xx.h
+.\Obj\lpc17xx_gpdma.o: C:\Keil\ARM\CMSIS\Include\core_cm3.h
+.\Obj\lpc17xx_gpdma.o: C:\Keil\ARM\RV31\Inc\stdint.h
+.\Obj\lpc17xx_gpdma.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\Obj\lpc17xx_gpdma.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\Obj\lpc17xx_gpdma.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.h
+.\Obj\lpc17xx_gpdma.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc_types.h
+.\Obj\lpc17xx_gpdma.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_clkpwr.h
+.\Obj\lpc17xx_gpdma.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_libcfg_default.h

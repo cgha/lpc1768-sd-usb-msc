@@ -1,0 +1,1866 @@
+ARM Linker, 4.1 [Build 894] [Standard]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(i.SDInit) refers to mmc.o(i.disk_initialize) for disk_initialize
+    main.o(i.SysTick_Handler) refers to mmc.o(i.disk_timerproc) for disk_timerproc
+    main.o(i.SysTick_Handler) refers to main.o(.data) for msTicks
+    main.o(i.fputc) refers to lpc17xx_uart.o(i.UART_CheckBusy) for UART_CheckBusy
+    main.o(i.fputc) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    main.o(i.main) refers to main.o(i.SDInit) for SDInit
+    main.o(i.main) refers to debug_frmwrk.o(i.debug_frmwrk_init) for debug_frmwrk_init
+    main.o(i.main) refers to printf5.o(i.__0printf$5) for __2printf
+    main.o(i.main) refers to lpc17xx_gpio.o(i.GPIO_ReadValue) for GPIO_ReadValue
+    main.o(i.main) refers to main.o(i.delay) for delay
+    main.o(i.main) refers to usbhw.o(i.USB_Init) for USB_Init
+    main.o(i.main) refers to usbhw.o(i.USB_Connect) for USB_Connect
+    main.o(i.main) refers to usbhost_lpc17xx.o(i.Host_Init) for Host_Init
+    main.o(i.main) refers to usbhost_lpc17xx.o(i.Host_EnumDev) for Host_EnumDev
+    main.o(i.main) refers to mmc.o(i.Delay) for Delay
+    main.o(i.main) refers to usbhost_lpc17xx.o(i.Host_CtrlSend) for Host_CtrlSend
+    main.o(i.main) refers to system_lpc17xx.o(.data) for SystemCoreClock
+    main.o(i.main) refers to main.o(.data) for UsbMode
+    mmc.o(i.Delay) refers to main.o(.data) for msTicks
+    mmc.o(i.deselect) refers to lpc17xx_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    mmc.o(i.deselect) refers to mmc.o(i.rcvr_spi) for rcvr_spi
+    mmc.o(i.disk_initialize) refers to ssp.o(i.sspInit) for sspInit
+    mmc.o(i.disk_initialize) refers to lpc17xx_gpio.o(i.GPIO_SetDir) for GPIO_SetDir
+    mmc.o(i.disk_initialize) refers to mmc.o(i.Delay) for Delay
+    mmc.o(i.disk_initialize) refers to mmc.o(i.power_on) for power_on
+    mmc.o(i.disk_initialize) refers to ssp.o(i.sspClockSlow) for sspClockSlow
+    mmc.o(i.disk_initialize) refers to mmc.o(i.rcvr_spi) for rcvr_spi
+    mmc.o(i.disk_initialize) refers to mmc.o(i.send_cmd) for send_cmd
+    mmc.o(i.disk_initialize) refers to mmc.o(i.deselect) for deselect
+    mmc.o(i.disk_initialize) refers to ssp.o(i.sspClockFast) for sspClockFast
+    mmc.o(i.disk_initialize) refers to mmc.o(i.power_off) for power_off
+    mmc.o(i.disk_initialize) refers to mmc.o(.data) for Stat
+    mmc.o(i.disk_ioctl) refers to mmc.o(i.chk_power) for chk_power
+    mmc.o(i.disk_ioctl) refers to mmc.o(i.power_off) for power_off
+    mmc.o(i.disk_ioctl) refers to mmc.o(i.power_on) for power_on
+    mmc.o(i.disk_ioctl) refers to mmc.o(i.select) for select
+    mmc.o(i.disk_ioctl) refers to mmc.o(i.deselect) for deselect
+    mmc.o(i.disk_ioctl) refers to mmc.o(i.send_cmd) for send_cmd
+    mmc.o(i.disk_ioctl) refers to mmc.o(i.rcvr_datablock) for rcvr_datablock
+    mmc.o(i.disk_ioctl) refers to mmc.o(i.rcvr_spi) for rcvr_spi
+    mmc.o(i.disk_ioctl) refers to mmc.o(.data) for Stat
+    mmc.o(i.disk_read) refers to mmc.o(i.send_cmd) for send_cmd
+    mmc.o(i.disk_read) refers to mmc.o(i.rcvr_datablock) for rcvr_datablock
+    mmc.o(i.disk_read) refers to mmc.o(i.deselect) for deselect
+    mmc.o(i.disk_read) refers to mmc.o(.data) for Stat
+    mmc.o(i.disk_status) refers to mmc.o(.data) for Stat
+    mmc.o(i.disk_timerproc) refers to lpc17xx_gpio.o(i.GPIO_ReadValue) for GPIO_ReadValue
+    mmc.o(i.disk_timerproc) refers to mmc.o(.data) for Timer1
+    mmc.o(i.disk_write) refers to mmc.o(i.send_cmd) for send_cmd
+    mmc.o(i.disk_write) refers to mmc.o(i.xmit_datablock) for xmit_datablock
+    mmc.o(i.disk_write) refers to mmc.o(i.deselect) for deselect
+    mmc.o(i.disk_write) refers to mmc.o(.data) for Stat
+    mmc.o(i.rcvr_datablock) refers to mmc.o(i.rcvr_spi) for rcvr_spi
+    mmc.o(i.rcvr_datablock) refers to ssp.o(i.sspReceive) for sspReceive
+    mmc.o(i.rcvr_datablock) refers to mmc.o(.data) for Timer1
+    mmc.o(i.rcvr_spi) refers to ssp.o(i.sspReceive) for sspReceive
+    mmc.o(i.select) refers to lpc17xx_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    mmc.o(i.select) refers to mmc.o(i.wait_ready) for wait_ready
+    mmc.o(i.select) refers to mmc.o(i.deselect) for deselect
+    mmc.o(i.send_cmd) refers to mmc.o(i.deselect) for deselect
+    mmc.o(i.send_cmd) refers to mmc.o(i.select) for select
+    mmc.o(i.send_cmd) refers to mmc.o(i.xmit_spi) for xmit_spi
+    mmc.o(i.send_cmd) refers to mmc.o(i.rcvr_spi) for rcvr_spi
+    mmc.o(i.wait_ready) refers to mmc.o(i.rcvr_spi) for rcvr_spi
+    mmc.o(i.wait_ready) refers to mmc.o(.data) for Timer2
+    mmc.o(i.xmit_datablock) refers to mmc.o(i.wait_ready) for wait_ready
+    mmc.o(i.xmit_datablock) refers to mmc.o(i.xmit_spi) for xmit_spi
+    mmc.o(i.xmit_datablock) refers to mmc.o(i.rcvr_spi) for rcvr_spi
+    mmc.o(i.xmit_spi) refers to ssp.o(i.sspSend) for sspSend
+    ssp.o(i.spi_set_speed) refers to lpc17xx_ssp.o(i.setSSPclock) for setSSPclock
+    ssp.o(i.sspClockFast) refers to ssp.o(i.spi_set_speed) for spi_set_speed
+    ssp.o(i.sspClockSlow) refers to ssp.o(i.spi_set_speed) for spi_set_speed
+    ssp.o(i.sspInit) refers to lpc17xx_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    ssp.o(i.sspInit) refers to lpc17xx_gpio.o(i.GPIO_SetDir) for GPIO_SetDir
+    ssp.o(i.sspInit) refers to lpc17xx_pinsel.o(i.PINSEL_ConfigPin) for PINSEL_ConfigPin
+    ssp.o(i.sspInit) refers to lpc17xx_ssp.o(i.SSP_ConfigStructInit) for SSP_ConfigStructInit
+    ssp.o(i.sspInit) refers to lpc17xx_ssp.o(i.SSP_Init) for SSP_Init
+    ssp.o(i.sspInit) refers to lpc17xx_clkpwr.o(i.CLKPWR_SetPCLKDiv) for CLKPWR_SetPCLKDiv
+    ssp.o(i.sspInit) refers to lpc17xx_ssp.o(i.SSP_Cmd) for SSP_Cmd
+    mscuser.o(i.DataInFormat) refers to mscuser.o(i.MSC_SetCSW) for MSC_SetCSW
+    mscuser.o(i.DataInFormat) refers to usbhw.o(i.USB_SetStallEP) for USB_SetStallEP
+    mscuser.o(i.DataInFormat) refers to mscuser.o(.bss) for CBW
+    mscuser.o(i.DataInTransfer) refers to usbhw.o(i.USB_WriteEP) for USB_WriteEP
+    mscuser.o(i.DataInTransfer) refers to mscuser.o(.bss) for CBW
+    mscuser.o(i.DataInTransfer) refers to mscuser.o(.data) for BulkLen
+    mscuser.o(i.MSC_BulkIn) refers to mscuser.o(i.MSC_MemoryRead) for MSC_MemoryRead
+    mscuser.o(i.MSC_BulkIn) refers to mscuser.o(i.MSC_SetCSW) for MSC_SetCSW
+    mscuser.o(i.MSC_BulkIn) refers to usbhw.o(i.USB_SetStallEP) for USB_SetStallEP
+    mscuser.o(i.MSC_BulkIn) refers to mscuser.o(.data) for BulkStage
+    mscuser.o(i.MSC_BulkIn) refers to mscuser.o(.bss) for CBW
+    mscuser.o(i.MSC_BulkOut) refers to usbhw.o(i.USB_ReadEP) for USB_ReadEP
+    mscuser.o(i.MSC_BulkOut) refers to mscuser.o(i.MSC_GetCBW) for MSC_GetCBW
+    mscuser.o(i.MSC_BulkOut) refers to mscuser.o(i.MSC_MemoryWrite) for MSC_MemoryWrite
+    mscuser.o(i.MSC_BulkOut) refers to mscuser.o(i.MSC_MemoryVerify) for MSC_MemoryVerify
+    mscuser.o(i.MSC_BulkOut) refers to usbhw.o(i.USB_SetStallEP) for USB_SetStallEP
+    mscuser.o(i.MSC_BulkOut) refers to mscuser.o(i.MSC_SetCSW) for MSC_SetCSW
+    mscuser.o(i.MSC_BulkOut) refers to mscuser.o(.bss) for BulkBuf
+    mscuser.o(i.MSC_BulkOut) refers to mscuser.o(.data) for BulkLen
+    mscuser.o(i.MSC_GetCBW) refers to mscuser.o(i.MSC_SetCSW) for MSC_SetCSW
+    mscuser.o(i.MSC_GetCBW) refers to mscuser.o(i.MSC_TestUnitReady) for MSC_TestUnitReady
+    mscuser.o(i.MSC_GetCBW) refers to mscuser.o(i.MSC_RequestSense) for MSC_RequestSense
+    mscuser.o(i.MSC_GetCBW) refers to mscuser.o(i.MSC_Inquiry) for MSC_Inquiry
+    mscuser.o(i.MSC_GetCBW) refers to mscuser.o(i.MSC_ModeSense6) for MSC_ModeSense6
+    mscuser.o(i.MSC_GetCBW) refers to mscuser.o(i.MSC_ModeSense10) for MSC_ModeSense10
+    mscuser.o(i.MSC_GetCBW) refers to mscuser.o(i.MSC_ReadFormatCapacity) for MSC_ReadFormatCapacity
+    mscuser.o(i.MSC_GetCBW) refers to mscuser.o(i.MSC_ReadCapacity) for MSC_ReadCapacity
+    mscuser.o(i.MSC_GetCBW) refers to mscuser.o(i.MSC_RWSetup) for MSC_RWSetup
+    mscuser.o(i.MSC_GetCBW) refers to mscuser.o(i.MSC_MemoryRead) for MSC_MemoryRead
+    mscuser.o(i.MSC_GetCBW) refers to usbhw.o(i.USB_SetStallEP) for USB_SetStallEP
+    mscuser.o(i.MSC_GetCBW) refers to printf5.o(i.__0printf$5) for __2printf
+    mscuser.o(i.MSC_GetCBW) refers to mscuser.o(.bss) for BulkBuf
+    mscuser.o(i.MSC_GetCBW) refers to mscuser.o(.data) for BulkLen
+    mscuser.o(i.MSC_GetMaxLUN) refers to usbcore.o(.bss) for EP0Buf
+    mscuser.o(i.MSC_Inquiry) refers to mscuser.o(i.DataInFormat) for DataInFormat
+    mscuser.o(i.MSC_Inquiry) refers to mscuser.o(i.DataInTransfer) for DataInTransfer
+    mscuser.o(i.MSC_Inquiry) refers to mscuser.o(.bss) for BulkBuf
+    mscuser.o(i.MSC_Inquiry) refers to mscuser.o(.data) for BulkLen
+    mscuser.o(i.MSC_MemoryRead) refers to mmc.o(i.disk_read) for disk_read
+    mscuser.o(i.MSC_MemoryRead) refers to usbhw.o(i.USB_WriteEP) for USB_WriteEP
+    mscuser.o(i.MSC_MemoryRead) refers to mscuser.o(.data) for Length
+    mscuser.o(i.MSC_MemoryRead) refers to mscuser.o(.bss) for CSW
+    mscuser.o(i.MSC_MemoryVerify) refers to mscuser.o(.bss) for CSW
+    mscuser.o(i.MSC_MemoryWrite) refers to mmc.o(i.disk_read) for disk_read
+    mscuser.o(i.MSC_MemoryWrite) refers to mmc.o(i.disk_write) for disk_write
+    mscuser.o(i.MSC_MemoryWrite) refers to mscuser.o(i.MSC_SetCSW) for MSC_SetCSW
+    mscuser.o(i.MSC_MemoryWrite) refers to mscuser.o(.data) for Offset
+    mscuser.o(i.MSC_MemoryWrite) refers to mscuser.o(.bss) for temp_block
+    mscuser.o(i.MSC_ModeSense10) refers to mscuser.o(i.DataInFormat) for DataInFormat
+    mscuser.o(i.MSC_ModeSense10) refers to mscuser.o(i.DataInTransfer) for DataInTransfer
+    mscuser.o(i.MSC_ModeSense10) refers to mscuser.o(.bss) for BulkBuf
+    mscuser.o(i.MSC_ModeSense10) refers to mscuser.o(.data) for BulkLen
+    mscuser.o(i.MSC_ModeSense6) refers to mscuser.o(i.DataInFormat) for DataInFormat
+    mscuser.o(i.MSC_ModeSense6) refers to mscuser.o(i.DataInTransfer) for DataInTransfer
+    mscuser.o(i.MSC_ModeSense6) refers to mscuser.o(.bss) for BulkBuf
+    mscuser.o(i.MSC_ModeSense6) refers to mscuser.o(.data) for BulkLen
+    mscuser.o(i.MSC_RWSetup) refers to mscuser.o(i.MSC_SetCSW) for MSC_SetCSW
+    mscuser.o(i.MSC_RWSetup) refers to usbhw.o(i.USB_SetStallEP) for USB_SetStallEP
+    mscuser.o(i.MSC_RWSetup) refers to mscuser.o(.bss) for CBW
+    mscuser.o(i.MSC_RWSetup) refers to mscuser.o(.data) for Offset
+    mscuser.o(i.MSC_ReadCapacity) refers to mscuser.o(i.DataInFormat) for DataInFormat
+    mscuser.o(i.MSC_ReadCapacity) refers to mmc.o(i.disk_ioctl) for disk_ioctl
+    mscuser.o(i.MSC_ReadCapacity) refers to mscuser.o(i.DataInTransfer) for DataInTransfer
+    mscuser.o(i.MSC_ReadCapacity) refers to mscuser.o(.bss) for BulkBuf
+    mscuser.o(i.MSC_ReadCapacity) refers to mscuser.o(.data) for BulkLen
+    mscuser.o(i.MSC_ReadFormatCapacity) refers to mscuser.o(i.DataInFormat) for DataInFormat
+    mscuser.o(i.MSC_ReadFormatCapacity) refers to mmc.o(i.disk_ioctl) for disk_ioctl
+    mscuser.o(i.MSC_ReadFormatCapacity) refers to mscuser.o(i.DataInTransfer) for DataInTransfer
+    mscuser.o(i.MSC_ReadFormatCapacity) refers to mscuser.o(.bss) for BulkBuf
+    mscuser.o(i.MSC_ReadFormatCapacity) refers to mscuser.o(.data) for BulkLen
+    mscuser.o(i.MSC_RequestSense) refers to mscuser.o(i.DataInFormat) for DataInFormat
+    mscuser.o(i.MSC_RequestSense) refers to mscuser.o(i.DataInTransfer) for DataInTransfer
+    mscuser.o(i.MSC_RequestSense) refers to mscuser.o(.bss) for BulkBuf
+    mscuser.o(i.MSC_RequestSense) refers to mscuser.o(.data) for BulkLen
+    mscuser.o(i.MSC_Reset) refers to mscuser.o(.data) for BulkStage
+    mscuser.o(i.MSC_SetCSW) refers to usbhw.o(i.USB_WriteEP) for USB_WriteEP
+    mscuser.o(i.MSC_SetCSW) refers to mscuser.o(.bss) for CSW
+    mscuser.o(i.MSC_SetCSW) refers to mscuser.o(.data) for BulkStage
+    mscuser.o(i.MSC_TestUnitReady) refers to usbhw.o(i.USB_SetStallEP) for USB_SetStallEP
+    mscuser.o(i.MSC_TestUnitReady) refers to mscuser.o(i.MSC_SetCSW) for MSC_SetCSW
+    mscuser.o(i.MSC_TestUnitReady) refers to mscuser.o(.bss) for CBW
+    usbcore.o(i.USB_DataInStage) refers to usbhw.o(i.USB_WriteEP) for USB_WriteEP
+    usbcore.o(i.USB_DataInStage) refers to usbcore.o(.data) for EP0Data
+    usbcore.o(i.USB_DataOutStage) refers to usbhw.o(i.USB_ReadEP) for USB_ReadEP
+    usbcore.o(i.USB_DataOutStage) refers to usbcore.o(.data) for EP0Data
+    usbcore.o(i.USB_EndPoint0) refers to usbcore.o(i.USB_SetupStage) for USB_SetupStage
+    usbcore.o(i.USB_EndPoint0) refers to usbhw.o(i.USB_DirCtrlEP) for USB_DirCtrlEP
+    usbcore.o(i.USB_EndPoint0) refers to usbcore.o(i.USB_GetStatus) for USB_GetStatus
+    usbcore.o(i.USB_EndPoint0) refers to usbcore.o(i.USB_SetClrFeature) for USB_SetClrFeature
+    usbcore.o(i.USB_EndPoint0) refers to usbcore.o(i.USB_StatusInStage) for USB_StatusInStage
+    usbcore.o(i.USB_EndPoint0) refers to usbcore.o(i.USB_GetDescriptor) for USB_GetDescriptor
+    usbcore.o(i.USB_EndPoint0) refers to usbhw.o(i.USB_SetStallEP) for USB_SetStallEP
+    usbcore.o(i.USB_EndPoint0) refers to usbcore.o(i.USB_DataInStage) for USB_DataInStage
+    usbcore.o(i.USB_EndPoint0) refers to usbcore.o(i.USB_SetConfiguration) for USB_SetConfiguration
+    usbcore.o(i.USB_EndPoint0) refers to usbuser.o(i.USB_Configure_Event) for USB_Configure_Event
+    usbcore.o(i.USB_EndPoint0) refers to usbcore.o(i.USB_SetInterface) for USB_SetInterface
+    usbcore.o(i.USB_EndPoint0) refers to mscuser.o(i.MSC_Reset) for MSC_Reset
+    usbcore.o(i.USB_EndPoint0) refers to mscuser.o(i.MSC_GetMaxLUN) for MSC_GetMaxLUN
+    usbcore.o(i.USB_EndPoint0) refers to usbcore.o(i.USB_DataOutStage) for USB_DataOutStage
+    usbcore.o(i.USB_EndPoint0) refers to usbcore.o(i.USB_StatusOutStage) for USB_StatusOutStage
+    usbcore.o(i.USB_EndPoint0) refers to usbhw.o(i.USB_SetAddress) for USB_SetAddress
+    usbcore.o(i.USB_EndPoint0) refers to usbhw.o(i.USB_ClrStallEP) for USB_ClrStallEP
+    usbcore.o(i.USB_EndPoint0) refers to usbcore.o(.data) for SetupPacket
+    usbcore.o(i.USB_EndPoint0) refers to usbcore.o(.bss) for EP0Buf
+    usbcore.o(i.USB_GetDescriptor) refers to usbcore.o(i.USB_DataInStage) for USB_DataInStage
+    usbcore.o(i.USB_GetDescriptor) refers to usbcore.o(.data) for SetupPacket
+    usbcore.o(i.USB_GetDescriptor) refers to usbdesc.o(.constdata) for USB_DeviceDescriptor
+    usbcore.o(i.USB_GetStatus) refers to usbcore.o(i.USB_DataInStage) for USB_DataInStage
+    usbcore.o(i.USB_GetStatus) refers to usbcore.o(.data) for SetupPacket
+    usbcore.o(i.USB_GetStatus) refers to usbcore.o(.bss) for EP0Buf
+    usbcore.o(i.USB_ResetCore) refers to usbcore.o(.data) for USB_DeviceStatus
+    usbcore.o(i.USB_SetClrFeature) refers to usbhw.o(i.USB_WakeUpCfg) for USB_WakeUpCfg
+    usbcore.o(i.USB_SetClrFeature) refers to usbhw.o(i.USB_SetStallEP) for USB_SetStallEP
+    usbcore.o(i.USB_SetClrFeature) refers to usbhw.o(i.USB_ClrStallEP) for USB_ClrStallEP
+    usbcore.o(i.USB_SetClrFeature) refers to usbcore.o(.data) for SetupPacket
+    usbcore.o(i.USB_SetConfiguration) refers to usbhw.o(i.USB_DisableEP) for USB_DisableEP
+    usbcore.o(i.USB_SetConfiguration) refers to usbhw.o(i.USB_Configure) for USB_Configure
+    usbcore.o(i.USB_SetConfiguration) refers to usbhw.o(i.USB_ConfigEP) for USB_ConfigEP
+    usbcore.o(i.USB_SetConfiguration) refers to usbhw.o(i.USB_EnableEP) for USB_EnableEP
+    usbcore.o(i.USB_SetConfiguration) refers to usbhw.o(i.USB_ResetEP) for USB_ResetEP
+    usbcore.o(i.USB_SetConfiguration) refers to usbcore.o(.data) for SetupPacket
+    usbcore.o(i.USB_SetConfiguration) refers to usbdesc.o(.constdata) for USB_ConfigDescriptor
+    usbcore.o(i.USB_SetInterface) refers to usbhw.o(i.USB_ConfigEP) for USB_ConfigEP
+    usbcore.o(i.USB_SetInterface) refers to usbhw.o(i.USB_EnableEP) for USB_EnableEP
+    usbcore.o(i.USB_SetInterface) refers to usbhw.o(i.USB_ResetEP) for USB_ResetEP
+    usbcore.o(i.USB_SetInterface) refers to usbhw.o(i.USB_DisableEP) for USB_DisableEP
+    usbcore.o(i.USB_SetInterface) refers to usbcore.o(.data) for USB_Configuration
+    usbcore.o(i.USB_SetInterface) refers to usbdesc.o(.constdata) for USB_ConfigDescriptor
+    usbcore.o(i.USB_SetupStage) refers to usbhw.o(i.USB_ReadEP) for USB_ReadEP
+    usbcore.o(i.USB_SetupStage) refers to usbcore.o(.data) for SetupPacket
+    usbcore.o(i.USB_StatusInStage) refers to usbhw.o(i.USB_WriteEP) for USB_WriteEP
+    usbcore.o(i.USB_StatusOutStage) refers to usbhw.o(i.USB_ReadEP) for USB_ReadEP
+    usbcore.o(i.USB_StatusOutStage) refers to usbcore.o(.bss) for EP0Buf
+    usbhw.o(i.USB_ClrStallEP) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_ClrStallEP) refers to usbhw.o(i.WrCmdDat) for WrCmdDat
+    usbhw.o(i.USB_ConfigEP) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_Configure) refers to usbhw.o(i.WrCmdDat) for WrCmdDat
+    usbhw.o(i.USB_Connect) refers to usbhw.o(i.WrCmdDat) for WrCmdDat
+    usbhw.o(i.USB_DMA_BufAdr) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_DMA_BufAdr) refers to usbhw.o(USB_RAM) for UDCA
+    usbhw.o(i.USB_DMA_BufCnt) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_DMA_BufCnt) refers to usbhw.o(USB_RAM) for UDCA
+    usbhw.o(i.USB_DMA_Disable) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_DMA_Enable) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_DMA_Setup) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_DMA_Setup) refers to usbhw.o(.bss) for udca
+    usbhw.o(i.USB_DMA_Setup) refers to usbhw.o(.constdata) for DDAdr
+    usbhw.o(i.USB_DMA_Setup) refers to usbhw.o(.data) for DDMemMap
+    usbhw.o(i.USB_DMA_Setup) refers to usbhw.o(USB_RAM) for UDCA
+    usbhw.o(i.USB_DMA_Status) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_DMA_Status) refers to usbhw.o(USB_RAM) for UDCA
+    usbhw.o(i.USB_DisableEP) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_DisableEP) refers to usbhw.o(i.WrCmdDat) for WrCmdDat
+    usbhw.o(i.USB_EnableEP) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_EnableEP) refers to usbhw.o(i.WrCmdDat) for WrCmdDat
+    usbhw.o(i.USB_GetFrame) refers to usbhw.o(i.WrCmd) for WrCmd
+    usbhw.o(i.USB_GetFrame) refers to usbhw.o(i.RdCmdDat) for RdCmdDat
+    usbhw.o(i.USB_IRQHandler) refers to usbhw.o(i.WrCmd) for WrCmd
+    usbhw.o(i.USB_IRQHandler) refers to usbhw.o(i.RdCmdDat) for RdCmdDat
+    usbhw.o(i.USB_IRQHandler) refers to usbhw.o(i.USB_Reset) for USB_Reset
+    usbhw.o(i.USB_IRQHandler) refers to usbuser.o(i.USB_Reset_Event) for USB_Reset_Event
+    usbhw.o(i.USB_IRQHandler) refers to usbhw.o(i.USB_Suspend) for USB_Suspend
+    usbhw.o(i.USB_IRQHandler) refers to usbhw.o(i.USB_Resume) for USB_Resume
+    usbhw.o(i.USB_IRQHandler) refers to printf5.o(i.__0printf$5) for __2printf
+    usbhw.o(i.USB_IRQHandler) refers to main.o(.data) for UsbMode
+    usbhw.o(i.USB_IRQHandler) refers to usbuser.o(.constdata) for USB_P_EP
+    usbhw.o(i.USB_IRQHandler) refers to usbhost_lpc17xx.o(.data) for HOST_RhscIntr
+    usbhw.o(i.USB_Init) refers to usbhw.o(i.USB_Reset) for USB_Reset
+    usbhw.o(i.USB_Init) refers to usbhw.o(i.USB_SetAddress) for USB_SetAddress
+    usbhw.o(i.USB_ReadEP) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_ReadEP) refers to usbhw.o(i.WrCmd) for WrCmd
+    usbhw.o(i.USB_Reset) refers to usbhw.o(.data) for DDMemMap
+    usbhw.o(i.USB_Reset) refers to usbhw.o(.bss) for udca
+    usbhw.o(i.USB_Reset) refers to usbhw.o(USB_RAM) for UDCA
+    usbhw.o(i.USB_ResetEP) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_ResetEP) refers to usbhw.o(i.WrCmdDat) for WrCmdDat
+    usbhw.o(i.USB_SetAddress) refers to usbhw.o(i.WrCmdDat) for WrCmdDat
+    usbhw.o(i.USB_SetStallEP) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_SetStallEP) refers to usbhw.o(i.WrCmdDat) for WrCmdDat
+    usbhw.o(i.USB_WakeUp) refers to usbhw.o(i.WrCmdDat) for WrCmdDat
+    usbhw.o(i.USB_WakeUp) refers to usbcore.o(.data) for USB_DeviceStatus
+    usbhw.o(i.USB_WriteEP) refers to usbhw.o(i.EPAdr) for EPAdr
+    usbhw.o(i.USB_WriteEP) refers to usbhw.o(i.WrCmd) for WrCmd
+    usbuser.o(i.USB_EndPoint2) refers to mscuser.o(i.MSC_BulkOut) for MSC_BulkOut
+    usbuser.o(i.USB_EndPoint2) refers to mscuser.o(i.MSC_BulkIn) for MSC_BulkIn
+    usbuser.o(i.USB_Reset_Event) refers to usbcore.o(i.USB_ResetCore) for USB_ResetCore
+    usbuser.o(.constdata) refers to usbcore.o(i.USB_EndPoint0) for USB_EndPoint0
+    usbuser.o(.constdata) refers to usbuser.o(i.USB_EndPoint2) for USB_EndPoint2
+    debug_frmwrk.o(i.UARTGetChar) refers to lpc17xx_uart.o(i.UART_Receive) for UART_Receive
+    debug_frmwrk.o(i.UARTPutChar) refers to lpc17xx_uart.o(i.UART_Send) for UART_Send
+    debug_frmwrk.o(i.UARTPutDec) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutDec16) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutDec32) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutHex) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.UARTPutHex) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutHex16) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.UARTPutHex16) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutHex32) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.UARTPutHex32) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPuts) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPuts_) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to lpc17xx_pinsel.o(i.PINSEL_ConfigPin) for PINSEL_ConfigPin
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to lpc17xx_uart.o(i.UART_ConfigStructInit) for UART_ConfigStructInit
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to lpc17xx_uart.o(i.UART_Init) for UART_Init
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to lpc17xx_uart.o(i.UART_TxCmd) for UART_TxCmd
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(.data) for _db_msg
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPuts_) for UARTPuts_
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutHex) for UARTPutHex
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutHex16) for UARTPutHex16
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutHex32) for UARTPutHex32
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutDec) for UARTPutDec
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutDec16) for UARTPutDec16
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutDec32) for UARTPutDec32
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTGetChar) for UARTGetChar
+    lpc17xx_adc.o(i.ADC_BurstCmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_adc.o(i.ADC_ChannelCmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_adc.o(i.ADC_ChannelGetData) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_adc.o(i.ADC_ChannelGetStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_adc.o(i.ADC_DeInit) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_adc.o(i.ADC_DeInit) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_adc.o(i.ADC_EdgeStartConfig) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_adc.o(i.ADC_GlobalGetData) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_adc.o(i.ADC_GlobalGetStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_adc.o(i.ADC_Init) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_adc.o(i.ADC_Init) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_adc.o(i.ADC_Init) refers to lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK) for CLKPWR_GetPCLK
+    lpc17xx_adc.o(i.ADC_IntConfig) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_adc.o(i.ADC_PowerdownCmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_adc.o(i.ADC_StartCmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK) refers to lpc17xx_clkpwr.o(i.CLKPWR_GetPCLKSEL) for CLKPWR_GetPCLKSEL
+    lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK) refers to system_lpc17xx.o(.data) for SystemCoreClock
+    lpc17xx_gpdma.o(i.GPDMA_ChannelCmd) refers to lpc17xx_gpdma.o(.data) for pGPDMACh
+    lpc17xx_gpdma.o(i.GPDMA_ClearIntPending) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_gpdma.o(i.GPDMA_ClearIntPending) refers to lpc17xx_gpdma.o(.constdata) for .constdata
+    lpc17xx_gpdma.o(i.GPDMA_Init) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_gpdma.o(i.GPDMA_IntGetStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_gpdma.o(i.GPDMA_IntGetStatus) refers to lpc17xx_gpdma.o(.constdata) for .constdata
+    lpc17xx_gpdma.o(i.GPDMA_Setup) refers to lpc17xx_gpdma.o(.data) for pGPDMACh
+    lpc17xx_gpdma.o(i.GPDMA_Setup) refers to lpc17xx_gpdma.o(.constdata) for GPDMA_LUTPerAddr
+    lpc17xx_gpio.o(i.FIO_ByteClearValue) refers to lpc17xx_gpio.o(i.FIO_ByteGetPointer) for FIO_ByteGetPointer
+    lpc17xx_gpio.o(i.FIO_ByteReadValue) refers to lpc17xx_gpio.o(i.FIO_ByteGetPointer) for FIO_ByteGetPointer
+    lpc17xx_gpio.o(i.FIO_ByteSetDir) refers to lpc17xx_gpio.o(i.FIO_ByteGetPointer) for FIO_ByteGetPointer
+    lpc17xx_gpio.o(i.FIO_ByteSetMask) refers to lpc17xx_gpio.o(i.FIO_ByteGetPointer) for FIO_ByteGetPointer
+    lpc17xx_gpio.o(i.FIO_ByteSetValue) refers to lpc17xx_gpio.o(i.FIO_ByteGetPointer) for FIO_ByteGetPointer
+    lpc17xx_gpio.o(i.FIO_ClearInt) refers to lpc17xx_gpio.o(i.GPIO_ClearInt) for GPIO_ClearInt
+    lpc17xx_gpio.o(i.FIO_ClearValue) refers to lpc17xx_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    lpc17xx_gpio.o(i.FIO_GetIntStatus) refers to lpc17xx_gpio.o(i.GPIO_GetIntStatus) for GPIO_GetIntStatus
+    lpc17xx_gpio.o(i.FIO_HalfWordClearValue) refers to lpc17xx_gpio.o(i.FIO_HalfWordGetPointer) for FIO_HalfWordGetPointer
+    lpc17xx_gpio.o(i.FIO_HalfWordReadValue) refers to lpc17xx_gpio.o(i.FIO_HalfWordGetPointer) for FIO_HalfWordGetPointer
+    lpc17xx_gpio.o(i.FIO_HalfWordSetDir) refers to lpc17xx_gpio.o(i.FIO_HalfWordGetPointer) for FIO_HalfWordGetPointer
+    lpc17xx_gpio.o(i.FIO_HalfWordSetMask) refers to lpc17xx_gpio.o(i.FIO_HalfWordGetPointer) for FIO_HalfWordGetPointer
+    lpc17xx_gpio.o(i.FIO_HalfWordSetValue) refers to lpc17xx_gpio.o(i.FIO_HalfWordGetPointer) for FIO_HalfWordGetPointer
+    lpc17xx_gpio.o(i.FIO_IntCmd) refers to lpc17xx_gpio.o(i.GPIO_IntCmd) for GPIO_IntCmd
+    lpc17xx_gpio.o(i.FIO_ReadValue) refers to lpc17xx_gpio.o(i.GPIO_ReadValue) for GPIO_ReadValue
+    lpc17xx_gpio.o(i.FIO_SetDir) refers to lpc17xx_gpio.o(i.GPIO_SetDir) for GPIO_SetDir
+    lpc17xx_gpio.o(i.FIO_SetMask) refers to lpc17xx_gpio.o(i.GPIO_GetPointer) for GPIO_GetPointer
+    lpc17xx_gpio.o(i.FIO_SetValue) refers to lpc17xx_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    lpc17xx_gpio.o(i.GPIO_ClearValue) refers to lpc17xx_gpio.o(i.GPIO_GetPointer) for GPIO_GetPointer
+    lpc17xx_gpio.o(i.GPIO_ReadValue) refers to lpc17xx_gpio.o(i.GPIO_GetPointer) for GPIO_GetPointer
+    lpc17xx_gpio.o(i.GPIO_SetDir) refers to lpc17xx_gpio.o(i.GPIO_GetPointer) for GPIO_GetPointer
+    lpc17xx_gpio.o(i.GPIO_SetValue) refers to lpc17xx_gpio.o(i.GPIO_GetPointer) for GPIO_GetPointer
+    lpc17xx_pinsel.o(i.PINSEL_ConfigPin) refers to lpc17xx_pinsel.o(i.set_PinFunc) for set_PinFunc
+    lpc17xx_pinsel.o(i.PINSEL_ConfigPin) refers to lpc17xx_pinsel.o(i.set_ResistorMode) for set_ResistorMode
+    lpc17xx_pinsel.o(i.PINSEL_ConfigPin) refers to lpc17xx_pinsel.o(i.set_OpenDrainMode) for set_OpenDrainMode
+    lpc17xx_spi.o(i.SPI_CheckStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_spi.o(i.SPI_ClearIntPending) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_spi.o(i.SPI_DeInit) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_spi.o(i.SPI_DeInit) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_spi.o(i.SPI_GetDataSize) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_spi.o(i.SPI_GetIntStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_spi.o(i.SPI_GetStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_spi.o(i.SPI_Init) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_spi.o(i.SPI_Init) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_spi.o(i.SPI_Init) refers to lpc17xx_spi.o(i.SPI_SetClock) for SPI_SetClock
+    lpc17xx_spi.o(i.SPI_IntCmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_spi.o(i.SPI_ReadWrite) refers to lpc17xx_spi.o(i.SPI_GetDataSize) for SPI_GetDataSize
+    lpc17xx_spi.o(i.SPI_ReadWrite) refers to lpc17xx_spi.o(i.SPI_SendData) for SPI_SendData
+    lpc17xx_spi.o(i.SPI_ReadWrite) refers to lpc17xx_spi.o(i.SPI_ReceiveData) for SPI_ReceiveData
+    lpc17xx_spi.o(i.SPI_ReadWrite) refers to lpc17xx_spi.o(i.SPI_IntCmd) for SPI_IntCmd
+    lpc17xx_spi.o(i.SPI_ReceiveData) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_spi.o(i.SPI_SendData) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_spi.o(i.SPI_SetClock) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_spi.o(i.SPI_SetClock) refers to lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK) for CLKPWR_GetPCLK
+    lpc17xx_ssp.o(i.SSP_ClearIntPending) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_Cmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_DMACmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_DeInit) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_DeInit) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_ssp.o(i.SSP_GetDataSize) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_GetIntStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_GetRawIntStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_GetRawIntStatusReg) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_GetStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_Init) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_Init) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_ssp.o(i.SSP_Init) refers to lpc17xx_ssp.o(i.setSSPclock) for setSSPclock
+    lpc17xx_ssp.o(i.SSP_IntConfig) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_LoopBackCmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_ReadWrite) refers to lpc17xx_ssp.o(i.SSP_ReceiveData) for SSP_ReceiveData
+    lpc17xx_ssp.o(i.SSP_ReadWrite) refers to lpc17xx_ssp.o(i.SSP_GetDataSize) for SSP_GetDataSize
+    lpc17xx_ssp.o(i.SSP_ReadWrite) refers to lpc17xx_ssp.o(i.SSP_SendData) for SSP_SendData
+    lpc17xx_ssp.o(i.SSP_ReceiveData) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_SendData) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.SSP_SlaveOutputCmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.setSSPclock) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_ssp.o(i.setSSPclock) refers to lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK) for CLKPWR_GetPCLK
+    lpc17xx_systick.o(i.SYSTICK_Cmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_systick.o(i.SYSTICK_Cmd) refers to lpc17xx_systick.o(.constdata) for .constdata
+    lpc17xx_systick.o(i.SYSTICK_ExternalInit) refers to ffltui.o(.text) for __aeabi_ui2f
+    lpc17xx_systick.o(i.SYSTICK_ExternalInit) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    lpc17xx_systick.o(i.SYSTICK_IntCmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_systick.o(i.SYSTICK_IntCmd) refers to lpc17xx_systick.o(.constdata) for .constdata
+    lpc17xx_systick.o(i.SYSTICK_InternalInit) refers to ffltui.o(.text) for __aeabi_ui2f
+    lpc17xx_systick.o(i.SYSTICK_InternalInit) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    lpc17xx_systick.o(i.SYSTICK_InternalInit) refers to system_lpc17xx.o(.data) for SystemCoreClock
+    lpc17xx_timer.o(i.TIM_ClearIntCapturePending) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_ClearIntCapturePending) refers to lpc17xx_timer.o(.constdata) for .constdata
+    lpc17xx_timer.o(i.TIM_ClearIntPending) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_ClearIntPending) refers to lpc17xx_timer.o(.constdata) for .constdata
+    lpc17xx_timer.o(i.TIM_Cmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_Cmd) refers to lpc17xx_timer.o(.constdata) for .constdata
+    lpc17xx_timer.o(i.TIM_ConfigCapture) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_ConfigCapture) refers to lpc17xx_timer.o(.constdata) for .constdata
+    lpc17xx_timer.o(i.TIM_ConfigMatch) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_ConfigMatch) refers to lpc17xx_timer.o(.constdata) for .constdata
+    lpc17xx_timer.o(i.TIM_DeInit) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_DeInit) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_timer.o(i.TIM_DeInit) refers to lpc17xx_timer.o(.constdata) for .constdata
+    lpc17xx_timer.o(i.TIM_GetCaptureValue) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_GetCaptureValue) refers to lpc17xx_timer.o(.constdata) for .constdata
+    lpc17xx_timer.o(i.TIM_GetIntCaptureStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_GetIntCaptureStatus) refers to lpc17xx_timer.o(.constdata) for .constdata
+    lpc17xx_timer.o(i.TIM_GetIntStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_GetIntStatus) refers to lpc17xx_timer.o(.constdata) for .constdata
+    lpc17xx_timer.o(i.TIM_Init) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_Init) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_timer.o(i.TIM_Init) refers to lpc17xx_clkpwr.o(i.CLKPWR_SetPCLKDiv) for CLKPWR_SetPCLKDiv
+    lpc17xx_timer.o(i.TIM_Init) refers to lpc17xx_timer.o(i.converPtrToTimeNum) for converPtrToTimeNum
+    lpc17xx_timer.o(i.TIM_Init) refers to lpc17xx_timer.o(i.converUSecToVal) for converUSecToVal
+    lpc17xx_timer.o(i.TIM_Init) refers to lpc17xx_timer.o(.constdata) for .constdata
+    lpc17xx_timer.o(i.TIM_ResetCounter) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_ResetCounter) refers to lpc17xx_timer.o(.constdata) for .constdata
+    lpc17xx_timer.o(i.TIM_UpdateMatchValue) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_timer.o(i.TIM_UpdateMatchValue) refers to lpc17xx_timer.o(.constdata) for .constdata
+    lpc17xx_timer.o(i.converUSecToVal) refers to lpc17xx_timer.o(i.getPClock) for getPClock
+    lpc17xx_timer.o(i.converUSecToVal) refers to uldiv.o(.text) for __aeabi_uldivmod
+    lpc17xx_timer.o(i.getPClock) refers to lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK) for CLKPWR_GetPCLK
+    lpc17xx_uart.o(i.UART_ABClearIntPending) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_ABClearIntPending) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_ABCmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_ABCmd) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_DeInit) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_DeInit) refers to lpc17xx_uart.o(i.UART_TxCmd) for UART_TxCmd
+    lpc17xx_uart.o(i.UART_DeInit) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_uart.o(i.UART_DeInit) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_FIFOConfig) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_FIFOConfig) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_ForceBreak) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_ForceBreak) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_FullModemConfigMode) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_FullModemConfigMode) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_FullModemForcePinState) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_FullModemForcePinState) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_FullModemGetStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_FullModemGetStatus) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_GetIntId) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_GetIntId) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_GetLineStatus) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_GetLineStatus) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_Init) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_Init) refers to lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc17xx_uart.o(i.UART_Init) refers to lpc17xx_uart.o(i.uart_set_divisors) for uart_set_divisors
+    lpc17xx_uart.o(i.UART_Init) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_IntConfig) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_IntConfig) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_IrDACmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_IrDACmd) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_IrDAInvtInputCmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_IrDAInvtInputCmd) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_IrDAPulseDivConfig) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_IrDAPulseDivConfig) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_RS485Config) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_RS485Config) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_RS485Send) refers to lpc17xx_uart.o(i.UART_Send) for UART_Send
+    lpc17xx_uart.o(i.UART_RS485SendData) refers to lpc17xx_uart.o(i.UART_RS485Send) for UART_RS485Send
+    lpc17xx_uart.o(i.UART_RS485SendSlvAddr) refers to lpc17xx_uart.o(i.UART_RS485Send) for UART_RS485Send
+    lpc17xx_uart.o(i.UART_Receive) refers to lpc17xx_uart.o(i.UART_ReceiveByte) for UART_ReceiveByte
+    lpc17xx_uart.o(i.UART_ReceiveByte) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_ReceiveByte) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_Send) refers to lpc17xx_uart.o(i.UART_SendByte) for UART_SendByte
+    lpc17xx_uart.o(i.UART_SendByte) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_SendByte) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.UART_TxCmd) refers to lpc17xx_libcfg_default.o(i.check_failed) for check_failed
+    lpc17xx_uart.o(i.UART_TxCmd) refers to lpc17xx_uart.o(.constdata) for .constdata
+    lpc17xx_uart.o(i.uart_set_divisors) refers to lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK) for CLKPWR_GetPCLK
+    lpc17xx_uart.o(i.uart_set_divisors) refers to llshl.o(.text) for __aeabi_llsl
+    lpc17xx_uart.o(i.uart_set_divisors) refers to uldiv.o(.text) for __aeabi_uldivmod
+    lpc17xx_uart.o(i.uart_set_divisors) refers to llushr.o(.text) for __aeabi_llsr
+    system_lpc17xx.o(i.SystemCoreClockUpdate) refers to system_lpc17xx.o(.data) for SystemCoreClock
+    startup_lpc17xx.o(RESET) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    startup_lpc17xx.o(RESET) refers to startup_lpc17xx.o(.text) for Reset_Handler
+    startup_lpc17xx.o(RESET) refers to main.o(i.SysTick_Handler) for SysTick_Handler
+    startup_lpc17xx.o(RESET) refers to usbhw.o(i.USB_IRQHandler) for USB_IRQHandler
+    startup_lpc17xx.o(.text) refers to system_lpc17xx.o(i.SystemInit) for SystemInit
+    startup_lpc17xx.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    usbhost_lpc17xx.o(i.Host_CtrlRecv) refers to usbhost_lpc17xx.o(i.Host_FillSetup) for Host_FillSetup
+    usbhost_lpc17xx.o(i.Host_CtrlRecv) refers to usbhost_lpc17xx.o(i.Host_ProcessTD) for Host_ProcessTD
+    usbhost_lpc17xx.o(i.Host_CtrlRecv) refers to usbhost_lpc17xx.o(.data) for TDBuffer
+    usbhost_lpc17xx.o(i.Host_CtrlSend) refers to usbhost_lpc17xx.o(i.Host_FillSetup) for Host_FillSetup
+    usbhost_lpc17xx.o(i.Host_CtrlSend) refers to usbhost_lpc17xx.o(i.Host_ProcessTD) for Host_ProcessTD
+    usbhost_lpc17xx.o(i.Host_CtrlSend) refers to usbhost_lpc17xx.o(.data) for TDBuffer
+    usbhost_lpc17xx.o(i.Host_DelayMS) refers to usbhost_lpc17xx.o(i.Host_DelayUS) for Host_DelayUS
+    usbhost_lpc17xx.o(i.Host_EnumDev) refers to printf5.o(i.__0printf$5) for __2printf
+    usbhost_lpc17xx.o(i.Host_EnumDev) refers to usbhost_lpc17xx.o(i.Host_DelayMS) for Host_DelayMS
+    usbhost_lpc17xx.o(i.Host_EnumDev) refers to usbhost_lpc17xx.o(i.Host_CtrlRecv) for Host_CtrlRecv
+    usbhost_lpc17xx.o(i.Host_EnumDev) refers to usbhost_lpc17xx.o(i.Host_CtrlSend) for Host_CtrlSend
+    usbhost_lpc17xx.o(i.Host_EnumDev) refers to usbhost_lpc17xx.o(i.ReadLE16U) for ReadLE16U
+    usbhost_lpc17xx.o(i.Host_EnumDev) refers to usbhost_lpc17xx.o(.data) for HOST_RhscIntr
+    usbhost_lpc17xx.o(i.Host_EnumDev) refers to usbhost_lpc17xx.o(.constdata) for __FUNCTION__
+    usbhost_lpc17xx.o(i.Host_FillSetup) refers to usbhost_lpc17xx.o(i.WriteLE16U) for WriteLE16U
+    usbhost_lpc17xx.o(i.Host_FillSetup) refers to usbhost_lpc17xx.o(.data) for TDBuffer
+    usbhost_lpc17xx.o(i.Host_Init) refers to usbhost_lpc17xx.o(i.Host_EDInit) for Host_EDInit
+    usbhost_lpc17xx.o(i.Host_Init) refers to usbhost_lpc17xx.o(i.Host_TDInit) for Host_TDInit
+    usbhost_lpc17xx.o(i.Host_Init) refers to usbhost_lpc17xx.o(i.Host_HCCAInit) for Host_HCCAInit
+    usbhost_lpc17xx.o(i.Host_Init) refers to usbhost_lpc17xx.o(i.Host_DelayMS) for Host_DelayMS
+    usbhost_lpc17xx.o(i.Host_Init) refers to usbhost_lpc17xx.o(.data) for Hcca
+    usbhost_lpc17xx.o(i.Host_ProcessTD) refers to usbhost_lpc17xx.o(i.Host_WDHWait) for Host_WDHWait
+    usbhost_lpc17xx.o(i.Host_ProcessTD) refers to usbhost_lpc17xx.o(.data) for EDCtrl
+    usbhost_lpc17xx.o(i.Host_WDHWait) refers to usbhost_lpc17xx.o(.data) for HOST_WdhIntr
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8.o(.ARM.Collect$$$$00000009) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    printfb.o(i.__0fprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0fprintf$bare) refers to main.o(i.fputc) for fputc
+    printfb.o(i.__0printf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0printf$bare) refers to main.o(i.fputc) for fputc
+    printfb.o(i.__0printf$bare) refers to stdout.o(.data) for __stdout
+    printfb.o(i.__0snprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0snprintf$bare) refers to printfb.o(i._snputc) for _snputc
+    printfb.o(i.__0sprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0sprintf$bare) refers to printfb.o(i._sputc) for _sputc
+    printfb.o(i.__0vfprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vfprintf$bare) refers to main.o(i.fputc) for fputc
+    printfb.o(i.__0vprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vprintf$bare) refers to main.o(i.fputc) for fputc
+    printfb.o(i.__0vprintf$bare) refers to stdout.o(.data) for __stdout
+    printfb.o(i.__0vsnprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vsnprintf$bare) refers to printfb.o(i._snputc) for _snputc
+    printfb.o(i.__0vsprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vsprintf$bare) refers to printfb.o(i._sputc) for _sputc
+    printf0.o(i.__0fprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0fprintf$0) refers to main.o(i.fputc) for fputc
+    printf0.o(i.__0printf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0printf$0) refers to main.o(i.fputc) for fputc
+    printf0.o(i.__0printf$0) refers to stdout.o(.data) for __stdout
+    printf0.o(i.__0snprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0snprintf$0) refers to printf0.o(i._snputc) for _snputc
+    printf0.o(i.__0sprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0sprintf$0) refers to printf0.o(i._sputc) for _sputc
+    printf0.o(i.__0vfprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vfprintf$0) refers to main.o(i.fputc) for fputc
+    printf0.o(i.__0vprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vprintf$0) refers to main.o(i.fputc) for fputc
+    printf0.o(i.__0vprintf$0) refers to stdout.o(.data) for __stdout
+    printf0.o(i.__0vsnprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vsnprintf$0) refers to printf0.o(i._snputc) for _snputc
+    printf0.o(i.__0vsprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vsprintf$0) refers to printf0.o(i._sputc) for _sputc
+    printf1.o(i.__0fprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0fprintf$1) refers to main.o(i.fputc) for fputc
+    printf1.o(i.__0printf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0printf$1) refers to main.o(i.fputc) for fputc
+    printf1.o(i.__0printf$1) refers to stdout.o(.data) for __stdout
+    printf1.o(i.__0snprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0snprintf$1) refers to printf1.o(i._snputc) for _snputc
+    printf1.o(i.__0sprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0sprintf$1) refers to printf1.o(i._sputc) for _sputc
+    printf1.o(i.__0vfprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vfprintf$1) refers to main.o(i.fputc) for fputc
+    printf1.o(i.__0vprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vprintf$1) refers to main.o(i.fputc) for fputc
+    printf1.o(i.__0vprintf$1) refers to stdout.o(.data) for __stdout
+    printf1.o(i.__0vsnprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vsnprintf$1) refers to printf1.o(i._snputc) for _snputc
+    printf1.o(i.__0vsprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vsprintf$1) refers to printf1.o(i._sputc) for _sputc
+    printf1.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf2.o(i.__0fprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0fprintf$2) refers to main.o(i.fputc) for fputc
+    printf2.o(i.__0printf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0printf$2) refers to main.o(i.fputc) for fputc
+    printf2.o(i.__0printf$2) refers to stdout.o(.data) for __stdout
+    printf2.o(i.__0snprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0snprintf$2) refers to printf2.o(i._snputc) for _snputc
+    printf2.o(i.__0sprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0sprintf$2) refers to printf2.o(i._sputc) for _sputc
+    printf2.o(i.__0vfprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vfprintf$2) refers to main.o(i.fputc) for fputc
+    printf2.o(i.__0vprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vprintf$2) refers to main.o(i.fputc) for fputc
+    printf2.o(i.__0vprintf$2) refers to stdout.o(.data) for __stdout
+    printf2.o(i.__0vsnprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vsnprintf$2) refers to printf2.o(i._snputc) for _snputc
+    printf2.o(i.__0vsprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vsprintf$2) refers to printf2.o(i._sputc) for _sputc
+    printf3.o(i.__0fprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0fprintf$3) refers to main.o(i.fputc) for fputc
+    printf3.o(i.__0printf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0printf$3) refers to main.o(i.fputc) for fputc
+    printf3.o(i.__0printf$3) refers to stdout.o(.data) for __stdout
+    printf3.o(i.__0snprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0snprintf$3) refers to printf3.o(i._snputc) for _snputc
+    printf3.o(i.__0sprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0sprintf$3) refers to printf3.o(i._sputc) for _sputc
+    printf3.o(i.__0vfprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vfprintf$3) refers to main.o(i.fputc) for fputc
+    printf3.o(i.__0vprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vprintf$3) refers to main.o(i.fputc) for fputc
+    printf3.o(i.__0vprintf$3) refers to stdout.o(.data) for __stdout
+    printf3.o(i.__0vsnprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vsnprintf$3) refers to printf3.o(i._snputc) for _snputc
+    printf3.o(i.__0vsprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vsprintf$3) refers to printf3.o(i._sputc) for _sputc
+    printf3.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf4.o(i.__0fprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0fprintf$4) refers to main.o(i.fputc) for fputc
+    printf4.o(i.__0printf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0printf$4) refers to main.o(i.fputc) for fputc
+    printf4.o(i.__0printf$4) refers to stdout.o(.data) for __stdout
+    printf4.o(i.__0snprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0snprintf$4) refers to printf4.o(i._snputc) for _snputc
+    printf4.o(i.__0sprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0sprintf$4) refers to printf4.o(i._sputc) for _sputc
+    printf4.o(i.__0vfprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vfprintf$4) refers to main.o(i.fputc) for fputc
+    printf4.o(i.__0vprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vprintf$4) refers to main.o(i.fputc) for fputc
+    printf4.o(i.__0vprintf$4) refers to stdout.o(.data) for __stdout
+    printf4.o(i.__0vsnprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vsnprintf$4) refers to printf4.o(i._snputc) for _snputc
+    printf4.o(i.__0vsprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vsprintf$4) refers to printf4.o(i._sputc) for _sputc
+    printf4.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf5.o(i.__0fprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0fprintf$5) refers to main.o(i.fputc) for fputc
+    printf5.o(i.__0printf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0printf$5) refers to main.o(i.fputc) for fputc
+    printf5.o(i.__0printf$5) refers to stdout.o(.data) for __stdout
+    printf5.o(i.__0snprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0snprintf$5) refers to printf5.o(i._snputc) for _snputc
+    printf5.o(i.__0sprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0sprintf$5) refers to printf5.o(i._sputc) for _sputc
+    printf5.o(i.__0vfprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vfprintf$5) refers to main.o(i.fputc) for fputc
+    printf5.o(i.__0vprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vprintf$5) refers to main.o(i.fputc) for fputc
+    printf5.o(i.__0vprintf$5) refers to stdout.o(.data) for __stdout
+    printf5.o(i.__0vsnprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vsnprintf$5) refers to printf5.o(i._snputc) for _snputc
+    printf5.o(i.__0vsprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vsprintf$5) refers to printf5.o(i._sputc) for _sputc
+    printf5.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf6.o(i.__0fprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0fprintf$6) refers to main.o(i.fputc) for fputc
+    printf6.o(i.__0printf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0printf$6) refers to main.o(i.fputc) for fputc
+    printf6.o(i.__0printf$6) refers to stdout.o(.data) for __stdout
+    printf6.o(i.__0snprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0snprintf$6) refers to printf6.o(i._snputc) for _snputc
+    printf6.o(i.__0sprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0sprintf$6) refers to printf6.o(i._sputc) for _sputc
+    printf6.o(i.__0vfprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vfprintf$6) refers to main.o(i.fputc) for fputc
+    printf6.o(i.__0vprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vprintf$6) refers to main.o(i.fputc) for fputc
+    printf6.o(i.__0vprintf$6) refers to stdout.o(.data) for __stdout
+    printf6.o(i.__0vsnprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vsnprintf$6) refers to printf6.o(i._snputc) for _snputc
+    printf6.o(i.__0vsprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vsprintf$6) refers to printf6.o(i._sputc) for _sputc
+    printf6.o(i._printf_core) refers to printf6.o(i._printf_pre_padding) for _printf_pre_padding
+    printf6.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf6.o(i._printf_core) refers to printf6.o(i._printf_post_padding) for _printf_post_padding
+    printf7.o(i.__0fprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0fprintf$7) refers to main.o(i.fputc) for fputc
+    printf7.o(i.__0printf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0printf$7) refers to main.o(i.fputc) for fputc
+    printf7.o(i.__0printf$7) refers to stdout.o(.data) for __stdout
+    printf7.o(i.__0snprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0snprintf$7) refers to printf7.o(i._snputc) for _snputc
+    printf7.o(i.__0sprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0sprintf$7) refers to printf7.o(i._sputc) for _sputc
+    printf7.o(i.__0vfprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vfprintf$7) refers to main.o(i.fputc) for fputc
+    printf7.o(i.__0vprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vprintf$7) refers to main.o(i.fputc) for fputc
+    printf7.o(i.__0vprintf$7) refers to stdout.o(.data) for __stdout
+    printf7.o(i.__0vsnprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vsnprintf$7) refers to printf7.o(i._snputc) for _snputc
+    printf7.o(i.__0vsprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vsprintf$7) refers to printf7.o(i._sputc) for _sputc
+    printf7.o(i._printf_core) refers to printf7.o(i._printf_pre_padding) for _printf_pre_padding
+    printf7.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf7.o(i._printf_core) refers to printf7.o(i._printf_post_padding) for _printf_post_padding
+    printf8.o(i.__0fprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0fprintf$8) refers to main.o(i.fputc) for fputc
+    printf8.o(i.__0printf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0printf$8) refers to main.o(i.fputc) for fputc
+    printf8.o(i.__0printf$8) refers to stdout.o(.data) for __stdout
+    printf8.o(i.__0snprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0snprintf$8) refers to printf8.o(i._snputc) for _snputc
+    printf8.o(i.__0sprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0sprintf$8) refers to printf8.o(i._sputc) for _sputc
+    printf8.o(i.__0vfprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vfprintf$8) refers to main.o(i.fputc) for fputc
+    printf8.o(i.__0vprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vprintf$8) refers to main.o(i.fputc) for fputc
+    printf8.o(i.__0vprintf$8) refers to stdout.o(.data) for __stdout
+    printf8.o(i.__0vsnprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vsnprintf$8) refers to printf8.o(i._snputc) for _snputc
+    printf8.o(i.__0vsprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vsprintf$8) refers to printf8.o(i._sputc) for _sputc
+    printf8.o(i._printf_core) refers to printf8.o(i._printf_pre_padding) for _printf_pre_padding
+    printf8.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf8.o(i._printf_core) refers to printf8.o(i._printf_post_padding) for _printf_post_padding
+    printfa.o(i.__0fprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0fprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0fprintf) refers to main.o(i.fputc) for fputc
+    printfa.o(i.__0printf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0printf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0printf) refers to main.o(i.fputc) for fputc
+    printfa.o(i.__0printf) refers to stdout.o(.data) for __stdout
+    printfa.o(i.__0snprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0snprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0snprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0sprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0sprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0sprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i.__0vfprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vfprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vfprintf) refers to main.o(i.fputc) for fputc
+    printfa.o(i.__0vprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vprintf) refers to main.o(i.fputc) for fputc
+    printfa.o(i.__0vprintf) refers to stdout.o(.data) for __stdout
+    printfa.o(i.__0vsnprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0vsprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i._fp_digits) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._fp_digits) refers to dmul.o(.text) for __aeabi_dmul
+    printfa.o(i._fp_digits) refers to ddiv.o(.text) for __aeabi_ddiv
+    printfa.o(i._fp_digits) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    printfa.o(i._fp_digits) refers to dadd.o(.text) for __aeabi_dadd
+    printfa.o(i._fp_digits) refers to dfixul.o(.text) for __aeabi_d2ulz
+    printfa.o(i._fp_digits) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_pre_padding) for _printf_pre_padding
+    printfa.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_post_padding) for _printf_post_padding
+    printfa.o(i._printf_core) refers to printfa.o(i._fp_digits) for _fp_digits
+    printfa.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printfa.o(i._printf_post_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_pre_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._snputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._sputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    cfrcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry8.o(.ARM.Collect$$$$00000009) refers to main.o(i.main) for main
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    dfixul.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dfixul.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing mmc.o(.rev16_text), (4 bytes).
+    Removing mmc.o(.revsh_text), (4 bytes).
+    Removing mmc.o(i.disk_status), (20 bytes).
+    Removing ssp.o(.rev16_text), (4 bytes).
+    Removing ssp.o(.revsh_text), (4 bytes).
+    Removing mscuser.o(.rev16_text), (4 bytes).
+    Removing mscuser.o(.revsh_text), (4 bytes).
+    Removing usbhw.o(.rev16_text), (4 bytes).
+    Removing usbhw.o(.revsh_text), (4 bytes).
+    Removing usbhw.o(i.USB_DMA_BufAdr), (36 bytes).
+    Removing usbhw.o(i.USB_DMA_BufCnt), (36 bytes).
+    Removing usbhw.o(i.USB_DMA_Disable), (24 bytes).
+    Removing usbhw.o(i.USB_DMA_Enable), (24 bytes).
+    Removing usbhw.o(i.USB_DMA_Setup), (288 bytes).
+    Removing usbhw.o(i.USB_DMA_Status), (80 bytes).
+    Removing usbhw.o(i.USB_GetFrame), (40 bytes).
+    Removing usbhw.o(i.USB_WakeUp), (36 bytes).
+    Removing usbhw.o(.constdata), (16 bytes).
+    Removing usbuser.o(.rev16_text), (4 bytes).
+    Removing usbuser.o(.revsh_text), (4 bytes).
+    Removing usbuser.o(i.USB_EndPoint1), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint10), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint11), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint12), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint13), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint14), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint15), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint3), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint4), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint5), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint6), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint7), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint8), (2 bytes).
+    Removing usbuser.o(i.USB_EndPoint9), (2 bytes).
+    Removing debug_frmwrk.o(.rev16_text), (4 bytes).
+    Removing debug_frmwrk.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_adc.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_adc.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_adc.o(i.ADC_BurstCmd), (112 bytes).
+    Removing lpc17xx_adc.o(i.ADC_ChannelCmd), (128 bytes).
+    Removing lpc17xx_adc.o(i.ADC_ChannelGetData), (112 bytes).
+    Removing lpc17xx_adc.o(i.ADC_ChannelGetStatus), (152 bytes).
+    Removing lpc17xx_adc.o(i.ADC_DeInit), (108 bytes).
+    Removing lpc17xx_adc.o(i.ADC_EdgeStartConfig), (128 bytes).
+    Removing lpc17xx_adc.o(i.ADC_GetData), (24 bytes).
+    Removing lpc17xx_adc.o(i.ADC_GlobalGetData), (96 bytes).
+    Removing lpc17xx_adc.o(i.ADC_GlobalGetStatus), (136 bytes).
+    Removing lpc17xx_adc.o(i.ADC_Init), (168 bytes).
+    Removing lpc17xx_adc.o(i.ADC_IntConfig), (160 bytes).
+    Removing lpc17xx_adc.o(i.ADC_PowerdownCmd), (112 bytes).
+    Removing lpc17xx_adc.o(i.ADC_StartCmd), (148 bytes).
+    Removing lpc17xx_clkpwr.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_clkpwr.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_clkpwr.o(i.CLKPWR_DeepPowerDown), (24 bytes).
+    Removing lpc17xx_clkpwr.o(i.CLKPWR_DeepSleep), (24 bytes).
+    Removing lpc17xx_clkpwr.o(i.CLKPWR_PowerDown), (24 bytes).
+    Removing lpc17xx_clkpwr.o(i.CLKPWR_Sleep), (16 bytes).
+    Removing lpc17xx_gpdma.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_gpdma.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_gpdma.o(i.GPDMA_ChannelCmd), (36 bytes).
+    Removing lpc17xx_gpdma.o(i.GPDMA_ClearIntPending), (80 bytes).
+    Removing lpc17xx_gpdma.o(i.GPDMA_Init), (92 bytes).
+    Removing lpc17xx_gpdma.o(i.GPDMA_IntGetStatus), (216 bytes).
+    Removing lpc17xx_gpdma.o(i.GPDMA_Setup), (592 bytes).
+    Removing lpc17xx_gpdma.o(.constdata), (212 bytes).
+    Removing lpc17xx_gpdma.o(.data), (32 bytes).
+    Removing lpc17xx_gpio.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_gpio.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_ByteClearValue), (34 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_ByteGetPointer), (56 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_ByteReadValue), (32 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_ByteSetDir), (50 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_ByteSetMask), (66 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_ByteSetValue), (34 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_ClearInt), (16 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_ClearValue), (16 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_GetIntStatus), (20 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_HalfWordClearValue), (32 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_HalfWordGetPointer), (56 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_HalfWordReadValue), (30 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_HalfWordSetDir), (62 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_HalfWordSetMask), (62 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_HalfWordSetValue), (32 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_IntCmd), (20 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_ReadValue), (12 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_SetDir), (20 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_SetMask), (40 bytes).
+    Removing lpc17xx_gpio.o(i.FIO_SetValue), (16 bytes).
+    Removing lpc17xx_gpio.o(i.GPIO_ClearInt), (32 bytes).
+    Removing lpc17xx_gpio.o(i.GPIO_GetIntStatus), (104 bytes).
+    Removing lpc17xx_gpio.o(i.GPIO_IntCmd), (72 bytes).
+    Removing lpc17xx_nvic.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_nvic.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_nvic.o(i.NVIC_DeInit), (76 bytes).
+    Removing lpc17xx_nvic.o(i.NVIC_SCBDeInit), (84 bytes).
+    Removing lpc17xx_nvic.o(i.NVIC_SetVTOR), (12 bytes).
+    Removing lpc17xx_pinsel.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_pinsel.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_pinsel.o(i.PINSEL_ConfigTraceFunc), (40 bytes).
+    Removing lpc17xx_pinsel.o(i.PINSEL_SetI2C0Pins), (20 bytes).
+    Removing lpc17xx_spi.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_spi.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_spi.o(i.SPI_CheckStatus), (116 bytes).
+    Removing lpc17xx_spi.o(i.SPI_ClearIntPending), (96 bytes).
+    Removing lpc17xx_spi.o(i.SPI_ConfigStructInit), (32 bytes).
+    Removing lpc17xx_spi.o(i.SPI_DeInit), (104 bytes).
+    Removing lpc17xx_spi.o(i.SPI_GetDataSize), (96 bytes).
+    Removing lpc17xx_spi.o(i.SPI_GetIntStatus), (100 bytes).
+    Removing lpc17xx_spi.o(i.SPI_GetStatus), (100 bytes).
+    Removing lpc17xx_spi.o(i.SPI_Init), (164 bytes).
+    Removing lpc17xx_spi.o(i.SPI_IntCmd), (136 bytes).
+    Removing lpc17xx_spi.o(i.SPI_ReadWrite), (320 bytes).
+    Removing lpc17xx_spi.o(i.SPI_ReceiveData), (96 bytes).
+    Removing lpc17xx_spi.o(i.SPI_SendData), (96 bytes).
+    Removing lpc17xx_spi.o(i.SPI_SetClock), (148 bytes).
+    Removing lpc17xx_ssp.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_ssp.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_ClearIntPending), (128 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_DMACmd), (168 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_DeInit), (132 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_GetDataSize), (108 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_GetIntStatus), (144 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_GetRawIntStatus), (144 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_GetRawIntStatusReg), (104 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_GetStatus), (148 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_IntConfig), (128 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_LoopBackCmd), (140 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_ReadWrite), (548 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_ReceiveData), (108 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_SendData), (108 bytes).
+    Removing lpc17xx_ssp.o(i.SSP_SlaveOutputCmd), (144 bytes).
+    Removing lpc17xx_systick.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_systick.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_systick.o(i.SYSTICK_ClearCounterFlag), (18 bytes).
+    Removing lpc17xx_systick.o(i.SYSTICK_Cmd), (64 bytes).
+    Removing lpc17xx_systick.o(i.SYSTICK_ExternalInit), (110 bytes).
+    Removing lpc17xx_systick.o(i.SYSTICK_GetCurrentValue), (8 bytes).
+    Removing lpc17xx_systick.o(i.SYSTICK_IntCmd), (64 bytes).
+    Removing lpc17xx_systick.o(i.SYSTICK_InternalInit), (96 bytes).
+    Removing lpc17xx_systick.o(.constdata), (68 bytes).
+    Removing lpc17xx_timer.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_timer.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_timer.o(i.TIM_ClearIntCapturePending), (100 bytes).
+    Removing lpc17xx_timer.o(i.TIM_ClearIntPending), (96 bytes).
+    Removing lpc17xx_timer.o(i.TIM_Cmd), (84 bytes).
+    Removing lpc17xx_timer.o(i.TIM_ConfigCapture), (140 bytes).
+    Removing lpc17xx_timer.o(i.TIM_ConfigMatch), (264 bytes).
+    Removing lpc17xx_timer.o(i.TIM_ConfigStructInit), (22 bytes).
+    Removing lpc17xx_timer.o(i.TIM_DeInit), (128 bytes).
+    Removing lpc17xx_timer.o(i.TIM_GetCaptureValue), (88 bytes).
+    Removing lpc17xx_timer.o(i.TIM_GetIntCaptureStatus), (112 bytes).
+    Removing lpc17xx_timer.o(i.TIM_GetIntStatus), (108 bytes).
+    Removing lpc17xx_timer.o(i.TIM_Init), (288 bytes).
+    Removing lpc17xx_timer.o(i.TIM_ResetCounter), (76 bytes).
+    Removing lpc17xx_timer.o(i.TIM_UpdateMatchValue), (100 bytes).
+    Removing lpc17xx_timer.o(i.converPtrToTimeNum), (60 bytes).
+    Removing lpc17xx_timer.o(i.converUSecToVal), (56 bytes).
+    Removing lpc17xx_timer.o(i.getPClock), (66 bytes).
+    Removing lpc17xx_timer.o(.constdata), (68 bytes).
+    Removing lpc17xx_uart.o(.rev16_text), (4 bytes).
+    Removing lpc17xx_uart.o(.revsh_text), (4 bytes).
+    Removing lpc17xx_uart.o(i.UART_ABClearIntPending), (84 bytes).
+    Removing lpc17xx_uart.o(i.UART_ABCmd), (208 bytes).
+    Removing lpc17xx_uart.o(i.UART_DeInit), (132 bytes).
+    Removing lpc17xx_uart.o(i.UART_FIFOConfig), (264 bytes).
+    Removing lpc17xx_uart.o(i.UART_FIFOConfigStructInit), (14 bytes).
+    Removing lpc17xx_uart.o(i.UART_ForceBreak), (88 bytes).
+    Removing lpc17xx_uart.o(i.UART_FullModemConfigMode), (132 bytes).
+    Removing lpc17xx_uart.o(i.UART_FullModemForcePinState), (120 bytes).
+    Removing lpc17xx_uart.o(i.UART_FullModemGetStatus), (36 bytes).
+    Removing lpc17xx_uart.o(i.UART_GetIntId), (72 bytes).
+    Removing lpc17xx_uart.o(i.UART_GetLineStatus), (76 bytes).
+    Removing lpc17xx_uart.o(i.UART_IntConfig), (272 bytes).
+    Removing lpc17xx_uart.o(i.UART_IrDACmd), (84 bytes).
+    Removing lpc17xx_uart.o(i.UART_IrDAInvtInputCmd), (84 bytes).
+    Removing lpc17xx_uart.o(i.UART_IrDAPulseDivConfig), (108 bytes).
+    Removing lpc17xx_uart.o(i.UART_RS485Config), (292 bytes).
+    Removing lpc17xx_uart.o(i.UART_RS485ReceiverCmd), (32 bytes).
+    Removing lpc17xx_uart.o(i.UART_RS485Send), (84 bytes).
+    Removing lpc17xx_uart.o(i.UART_RS485SendData), (22 bytes).
+    Removing lpc17xx_uart.o(i.UART_RS485SendSlvAddr), (18 bytes).
+    Removing system_lpc17xx.o(.rev16_text), (4 bytes).
+    Removing system_lpc17xx.o(.revsh_text), (4 bytes).
+    Removing system_lpc17xx.o(i.SystemCoreClockUpdate), (340 bytes).
+    Removing startup_lpc17xx.o(HEAP), (0 bytes).
+    Removing usbhost_lpc17xx.o(.rev16_text), (4 bytes).
+    Removing usbhost_lpc17xx.o(.revsh_text), (4 bytes).
+    Removing usbhost_lpc17xx.o(i.ReadBE16U), (22 bytes).
+    Removing usbhost_lpc17xx.o(i.ReadBE32U), (32 bytes).
+    Removing usbhost_lpc17xx.o(i.ReadLE32U), (32 bytes).
+    Removing usbhost_lpc17xx.o(i.WriteBE16U), (16 bytes).
+    Removing usbhost_lpc17xx.o(i.WriteBE32U), (28 bytes).
+    Removing usbhost_lpc17xx.o(i.WriteLE32U), (28 bytes).
+    Removing ffltui.o(.text), (10 bytes).
+    Removing cfrcmple.o(.text), (20 bytes).
+    Removing fepilogue.o(.text), (108 bytes).
+    Removing dadd.o(.text), (332 bytes).
+    Removing dmul.o(.text), (224 bytes).
+    Removing ddiv.o(.text), (222 bytes).
+    Removing dfixul.o(.text), (48 bytes).
+    Removing cdrcmple.o(.text), (40 bytes).
+    Removing depilogue.o(.text), (190 bytes).
+
+204 unused section(s) (total 14920 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      204  startup_lpc17xx.o(RESET)
+    ../../microlib/division.c                0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../../microlib/division.c                0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../../microlib/fpadd.c                   0x00000000   Number         0  dadd.o ABSOLUTE
+    ../../microlib/fpdiv.c                   0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../../microlib/fpepilogue.c              0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../../microlib/fpepilogue.c              0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../../microlib/fpfix.c                   0x00000000   Number         0  dfixul.o ABSOLUTE
+    ../../microlib/fpflt.c                   0x00000000   Number         0  ffltui.o ABSOLUTE
+    ../../microlib/fpmul.c                   0x00000000   Number         0  dmul.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry8.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry2.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry5.o ABSOLUTE
+    ../../microlib/longlong.c                0x00000000   Number         0  llushr.o ABSOLUTE
+    ../../microlib/longlong.c                0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../../microlib/longlong.c                0x00000000   Number         0  llshl.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf1.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf6.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf5.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf0.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printfa.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf8.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf7.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf4.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf3.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf2.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printfb.o ABSOLUTE
+    ../../microlib/printf/stubs.s            0x00000000   Number         0  stubs.o ABSOLUTE
+    ../../microlib/stdio/streams.c           0x00000000   Number         0  stdout.o ABSOLUTE
+    ../../microlib/stubs.s                   0x00000000   Number         0  iusefp.o ABSOLUTE
+    ..\Libraries\CM3\CoreSupport\core_cm3.c  0x00000000   Number         0  core_cm3.o ABSOLUTE
+    ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\startup\arm\startup_LPC17xx.s 0x00000000   Number         0  startup_lpc17xx.o ABSOLUTE
+    ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.c 0x00000000   Number         0  system_lpc17xx.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\debug_frmwrk.c 0x00000000   Number         0  debug_frmwrk.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_adc.c 0x00000000   Number         0  lpc17xx_adc.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_clkpwr.c 0x00000000   Number         0  lpc17xx_clkpwr.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_gpdma.c 0x00000000   Number         0  lpc17xx_gpdma.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_gpio.c 0x00000000   Number         0  lpc17xx_gpio.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_libcfg_default.c 0x00000000   Number         0  lpc17xx_libcfg_default.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_nvic.c 0x00000000   Number         0  lpc17xx_nvic.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_pinsel.c 0x00000000   Number         0  lpc17xx_pinsel.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_spi.c 0x00000000   Number         0  lpc17xx_spi.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_ssp.c 0x00000000   Number         0  lpc17xx_ssp.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_systick.c 0x00000000   Number         0  lpc17xx_systick.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_timer.c 0x00000000   Number         0  lpc17xx_timer.o ABSOLUTE
+    ..\Libraries\LPC1700CMSIS_Firmware_Library\source\lpc17xx_uart.c 0x00000000   Number         0  lpc17xx_uart.o ABSOLUTE
+    ..\USER\USB\mscuser.c                    0x00000000   Number         0  mscuser.o ABSOLUTE
+    ..\USER\USB\usbcore.c                    0x00000000   Number         0  usbcore.o ABSOLUTE
+    ..\USER\USB\usbdesc.c                    0x00000000   Number         0  usbdesc.o ABSOLUTE
+    ..\USER\USB\usbhw.c                      0x00000000   Number         0  usbhw.o ABSOLUTE
+    ..\USER\USB\usbuser.c                    0x00000000   Number         0  usbuser.o ABSOLUTE
+    ..\USER\main.c                           0x00000000   Number         0  main.o ABSOLUTE
+    ..\USER\mmc.c                            0x00000000   Number         0  mmc.o ABSOLUTE
+    ..\USER\ssp.c                            0x00000000   Number         0  ssp.o ABSOLUTE
+    ..\\Libraries\\CM3\\DeviceSupport\\NXP\\LPC17xx\\system_LPC17xx.c 0x00000000   Number         0  system_lpc17xx.o ABSOLUTE
+    ..\\Libraries\\LPC1700CMSIS_Firmware_Library\\source\\debug_frmwrk.c 0x00000000   Number         0  debug_frmwrk.o ABSOLUTE
+    ..\\Libraries\\LPC1700CMSIS_Firmware_Library\\source\\lpc17xx_adc.c 0x00000000   Number         0  lpc17xx_adc.o ABSOLUTE
+    ..\\Libraries\\LPC1700CMSIS_Firmware_Library\\source\\lpc17xx_clkpwr.c 0x00000000   Number         0  lpc17xx_clkpwr.o ABSOLUTE
+    ..\\Libraries\\LPC1700CMSIS_Firmware_Library\\source\\lpc17xx_gpdma.c 0x00000000   Number         0  lpc17xx_gpdma.o ABSOLUTE
+    ..\\Libraries\\LPC1700CMSIS_Firmware_Library\\source\\lpc17xx_gpio.c 0x00000000   Number         0  lpc17xx_gpio.o ABSOLUTE
+    ..\\Libraries\\LPC1700CMSIS_Firmware_Library\\source\\lpc17xx_nvic.c 0x00000000   Number         0  lpc17xx_nvic.o ABSOLUTE
+    ..\\Libraries\\LPC1700CMSIS_Firmware_Library\\source\\lpc17xx_pinsel.c 0x00000000   Number         0  lpc17xx_pinsel.o ABSOLUTE
+    ..\\Libraries\\LPC1700CMSIS_Firmware_Library\\source\\lpc17xx_spi.c 0x00000000   Number         0  lpc17xx_spi.o ABSOLUTE
+    ..\\Libraries\\LPC1700CMSIS_Firmware_Library\\source\\lpc17xx_ssp.c 0x00000000   Number         0  lpc17xx_ssp.o ABSOLUTE
+    ..\\Libraries\\LPC1700CMSIS_Firmware_Library\\source\\lpc17xx_systick.c 0x00000000   Number         0  lpc17xx_systick.o ABSOLUTE
+    ..\\Libraries\\LPC1700CMSIS_Firmware_Library\\source\\lpc17xx_timer.c 0x00000000   Number         0  lpc17xx_timer.o ABSOLUTE
+    ..\\Libraries\\LPC1700CMSIS_Firmware_Library\\source\\lpc17xx_uart.c 0x00000000   Number         0  lpc17xx_uart.o ABSOLUTE
+    ..\\USER\\USB\\mscuser.c                 0x00000000   Number         0  mscuser.o ABSOLUTE
+    ..\\USER\\USB\\usbhw.c                   0x00000000   Number         0  usbhw.o ABSOLUTE
+    ..\\USER\\USB\\usbuser.c                 0x00000000   Number         0  usbuser.o ABSOLUTE
+    ..\\USER\\main.c                         0x00000000   Number         0  main.o ABSOLUTE
+    ..\\USER\\mmc.c                          0x00000000   Number         0  mmc.o ABSOLUTE
+    ..\\USER\\ssp.c                          0x00000000   Number         0  ssp.o ABSOLUTE
+    cdrcmple.s                               0x00000000   Number         0  cdrcmple.o ABSOLUTE
+    cfrcmple.s                               0x00000000   Number         0  cfrcmple.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    usbhost_lpc17xx.c                        0x00000000   Number         0  usbhost_lpc17xx.o ABSOLUTE
+    usbhost_lpc17xx.c                        0x00000000   Number         0  usbhost_lpc17xx.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000cc   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000cc   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000d0   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000d4   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$00000009                 0x000000d4   Section        8  entry8.o(.ARM.Collect$$$$00000009)
+    .ARM.Collect$$$$00002712                 0x000000dc   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000dc   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000e0   Section       36  startup_lpc17xx.o(.text)
+    .text                                    0x00000104   Section        0  uldiv.o(.text)
+    .text                                    0x00000166   Section        0  llshl.o(.text)
+    .text                                    0x00000184   Section        0  llushr.o(.text)
+    .text                                    0x000001a4   Section       36  init.o(.text)
+    i.CLKPWR_ConfigPPWR                      0x000001c8   Section        0  lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR)
+    i.CLKPWR_GetPCLK                         0x00000208   Section        0  lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK)
+    i.CLKPWR_GetPCLKSEL                      0x00000248   Section        0  lpc17xx_clkpwr.o(i.CLKPWR_GetPCLKSEL)
+    i.CLKPWR_SetPCLKDiv                      0x00000270   Section        0  lpc17xx_clkpwr.o(i.CLKPWR_SetPCLKDiv)
+    i.EPAdr                                  0x000002e8   Section        0  usbhw.o(i.EPAdr)
+    i.USB_Configure_Event                    0x000002f8   Section        0  usbuser.o(i.USB_Configure_Event)
+    i.USB_DirCtrlEP                          0x000002fa   Section        0  usbhw.o(i.USB_DirCtrlEP)
+    .ARM.__at_0x02FC                         0x000002fc   Section        4  startup_lpc17xx.o(.ARM.__at_0x02FC)
+    i.DataInFormat                           0x00000300   Section        0  mscuser.o(i.DataInFormat)
+    i.DataInTransfer                         0x00000340   Section        0  mscuser.o(i.DataInTransfer)
+    i.Delay                                  0x00000390   Section        0  mmc.o(i.Delay)
+    i.GPIO_ClearValue                        0x000003a8   Section        0  lpc17xx_gpio.o(i.GPIO_ClearValue)
+    i.GPIO_GetPointer                        0x000003bc   Section        0  lpc17xx_gpio.o(i.GPIO_GetPointer)
+    GPIO_GetPointer                          0x000003bd   Thumb Code    52  lpc17xx_gpio.o(i.GPIO_GetPointer)
+    i.GPIO_ReadValue                         0x000003f4   Section        0  lpc17xx_gpio.o(i.GPIO_ReadValue)
+    i.GPIO_SetDir                            0x0000040a   Section        0  lpc17xx_gpio.o(i.GPIO_SetDir)
+    i.GPIO_SetValue                          0x00000432   Section        0  lpc17xx_gpio.o(i.GPIO_SetValue)
+    i.Host_CtrlRecv                          0x00000448   Section        0  usbhost_lpc17xx.o(i.Host_CtrlRecv)
+    i.Host_CtrlSend                          0x000004b4   Section        0  usbhost_lpc17xx.o(i.Host_CtrlSend)
+    i.Host_DelayMS                           0x00000520   Section        0  usbhost_lpc17xx.o(i.Host_DelayMS)
+    i.Host_DelayUS                           0x00000538   Section        0  usbhost_lpc17xx.o(i.Host_DelayUS)
+    i.Host_EDInit                            0x00000546   Section        0  usbhost_lpc17xx.o(i.Host_EDInit)
+    i.Host_EnumDev                           0x00000554   Section        0  usbhost_lpc17xx.o(i.Host_EnumDev)
+    i.Host_FillSetup                         0x00000758   Section        0  usbhost_lpc17xx.o(i.Host_FillSetup)
+    i.Host_HCCAInit                          0x000007b4   Section        0  usbhost_lpc17xx.o(i.Host_HCCAInit)
+    i.Host_Init                              0x000007d0   Section        0  usbhost_lpc17xx.o(i.Host_Init)
+    i.Host_ProcessTD                         0x00000978   Section        0  usbhost_lpc17xx.o(i.Host_ProcessTD)
+    i.Host_TDInit                            0x00000a5c   Section        0  usbhost_lpc17xx.o(i.Host_TDInit)
+    i.Host_WDHWait                           0x00000a68   Section        0  usbhost_lpc17xx.o(i.Host_WDHWait)
+    i.MSC_BulkIn                             0x00000a80   Section        0  mscuser.o(i.MSC_BulkIn)
+    i.MSC_BulkOut                            0x00000ad8   Section        0  mscuser.o(i.MSC_BulkOut)
+    i.MSC_GetCBW                             0x00000b4c   Section        0  mscuser.o(i.MSC_GetCBW)
+    i.MSC_GetMaxLUN                          0x00000d1c   Section        0  mscuser.o(i.MSC_GetMaxLUN)
+    i.MSC_Inquiry                            0x00000d2c   Section        0  mscuser.o(i.MSC_Inquiry)
+    i.MSC_MemoryRead                         0x00000dd8   Section        0  mscuser.o(i.MSC_MemoryRead)
+    i.MSC_MemoryVerify                       0x00000e6c   Section        0  mscuser.o(i.MSC_MemoryVerify)
+    i.MSC_MemoryWrite                        0x00000e78   Section        0  mscuser.o(i.MSC_MemoryWrite)
+    i.MSC_ModeSense10                        0x00000f40   Section        0  mscuser.o(i.MSC_ModeSense10)
+    i.MSC_ModeSense6                         0x00000f78   Section        0  mscuser.o(i.MSC_ModeSense6)
+    i.MSC_RWSetup                            0x00000fa8   Section        0  mscuser.o(i.MSC_RWSetup)
+    i.MSC_ReadCapacity                       0x00001080   Section        0  mscuser.o(i.MSC_ReadCapacity)
+    i.MSC_ReadFormatCapacity                 0x000010e0   Section        0  mscuser.o(i.MSC_ReadFormatCapacity)
+    i.MSC_RequestSense                       0x00001148   Section        0  mscuser.o(i.MSC_RequestSense)
+    i.MSC_Reset                              0x000011a0   Section        0  mscuser.o(i.MSC_Reset)
+    i.MSC_SetCSW                             0x000011b0   Section        0  mscuser.o(i.MSC_SetCSW)
+    i.MSC_TestUnitReady                      0x000011d4   Section        0  mscuser.o(i.MSC_TestUnitReady)
+    i.PINSEL_ConfigPin                       0x00001208   Section        0  lpc17xx_pinsel.o(i.PINSEL_ConfigPin)
+    i.RdCmdDat                               0x0000122c   Section        0  usbhw.o(i.RdCmdDat)
+    i.ReadLE16U                              0x0000125c   Section        0  usbhost_lpc17xx.o(i.ReadLE16U)
+    i.SDInit                                 0x00001272   Section        0  main.o(i.SDInit)
+    i.SSP_Cmd                                0x00001294   Section        0  lpc17xx_ssp.o(i.SSP_Cmd)
+    i.SSP_ConfigStructInit                   0x00001320   Section        0  lpc17xx_ssp.o(i.SSP_ConfigStructInit)
+    i.SSP_Init                               0x0000133c   Section        0  lpc17xx_ssp.o(i.SSP_Init)
+    i.SysTick_Handler                        0x000013e8   Section        0  main.o(i.SysTick_Handler)
+    i.SystemInit                             0x00001418   Section        0  system_lpc17xx.o(i.SystemInit)
+    i.UARTGetChar                            0x00001578   Section        0  debug_frmwrk.o(i.UARTGetChar)
+    i.UARTPutChar                            0x00001592   Section        0  debug_frmwrk.o(i.UARTPutChar)
+    i.UARTPutDec                             0x000015a4   Section        0  debug_frmwrk.o(i.UARTPutDec)
+    i.UARTPutDec16                           0x00001604   Section        0  debug_frmwrk.o(i.UARTPutDec16)
+    i.UARTPutDec32                           0x000016a4   Section        0  debug_frmwrk.o(i.UARTPutDec32)
+    i.UARTPutHex                             0x000017d0   Section        0  debug_frmwrk.o(i.UARTPutHex)
+    i.UARTPutHex16                           0x00001818   Section        0  debug_frmwrk.o(i.UARTPutHex16)
+    i.UARTPutHex32                           0x00001860   Section        0  debug_frmwrk.o(i.UARTPutHex32)
+    i.UARTPuts                               0x000018a8   Section        0  debug_frmwrk.o(i.UARTPuts)
+    i.UARTPuts_                              0x000018c4   Section        0  debug_frmwrk.o(i.UARTPuts_)
+    i.UART_CheckBusy                         0x000018e0   Section        0  lpc17xx_uart.o(i.UART_CheckBusy)
+    i.UART_ConfigStructInit                  0x000018f2   Section        0  lpc17xx_uart.o(i.UART_ConfigStructInit)
+    i.UART_Init                              0x00001904   Section        0  lpc17xx_uart.o(i.UART_Init)
+    i.UART_Receive                           0x00001afc   Section        0  lpc17xx_uart.o(i.UART_Receive)
+    i.UART_ReceiveByte                       0x00001b78   Section        0  lpc17xx_uart.o(i.UART_ReceiveByte)
+    i.UART_Send                              0x00001bc4   Section        0  lpc17xx_uart.o(i.UART_Send)
+    i.UART_SendByte                          0x00001c5c   Section        0  lpc17xx_uart.o(i.UART_SendByte)
+    i.UART_TxCmd                             0x00001ca8   Section        0  lpc17xx_uart.o(i.UART_TxCmd)
+    i.USB_ClrStallEP                         0x00001d3c   Section        0  usbhw.o(i.USB_ClrStallEP)
+    i.USB_ConfigEP                           0x00001d5c   Section        0  usbhw.o(i.USB_ConfigEP)
+    i.USB_Configure                          0x00001db4   Section        0  usbhw.o(i.USB_Configure)
+    i.USB_Connect                            0x00001dfc   Section        0  usbhw.o(i.USB_Connect)
+    i.USB_DataInStage                        0x00001e1c   Section        0  usbcore.o(i.USB_DataInStage)
+    i.USB_DataOutStage                       0x00001e54   Section        0  usbcore.o(i.USB_DataOutStage)
+    i.USB_DisableEP                          0x00001e7c   Section        0  usbhw.o(i.USB_DisableEP)
+    i.USB_EnableEP                           0x00001ea0   Section        0  usbhw.o(i.USB_EnableEP)
+    i.USB_EndPoint0                          0x00001ec0   Section        0  usbcore.o(i.USB_EndPoint0)
+    i.USB_EndPoint2                          0x00002130   Section        0  usbuser.o(i.USB_EndPoint2)
+    i.USB_GetDescriptor                      0x00002150   Section        0  usbcore.o(i.USB_GetDescriptor)
+    i.USB_GetStatus                          0x000021f8   Section        0  usbcore.o(i.USB_GetStatus)
+    i.USB_IRQHandler                         0x000022c8   Section        0  usbhw.o(i.USB_IRQHandler)
+    i.USB_Init                               0x00002608   Section        0  usbhw.o(i.USB_Init)
+    i.USB_ReadEP                             0x000026b0   Section        0  usbhw.o(i.USB_ReadEP)
+    i.USB_Reset                              0x00002734   Section        0  usbhw.o(i.USB_Reset)
+    i.USB_ResetCore                          0x00002818   Section        0  usbcore.o(i.USB_ResetCore)
+    i.USB_ResetEP                            0x0000284c   Section        0  usbhw.o(i.USB_ResetEP)
+    i.USB_Reset_Event                        0x0000286c   Section        0  usbuser.o(i.USB_Reset_Event)
+    i.USB_Resume                             0x00002874   Section        0  usbhw.o(i.USB_Resume)
+    i.USB_SetAddress                         0x00002878   Section        0  usbhw.o(i.USB_SetAddress)
+    i.USB_SetClrFeature                      0x000028a8   Section        0  usbcore.o(i.USB_SetClrFeature)
+    i.USB_SetConfiguration                   0x00002984   Section        0  usbcore.o(i.USB_SetConfiguration)
+    i.USB_SetInterface                       0x00002b20   Section        0  usbcore.o(i.USB_SetInterface)
+    i.USB_SetStallEP                         0x00002c3c   Section        0  usbhw.o(i.USB_SetStallEP)
+    i.USB_SetupStage                         0x00002c60   Section        0  usbcore.o(i.USB_SetupStage)
+    i.USB_StatusInStage                      0x00002c70   Section        0  usbcore.o(i.USB_StatusInStage)
+    i.USB_StatusOutStage                     0x00002c80   Section        0  usbcore.o(i.USB_StatusOutStage)
+    i.USB_Suspend                            0x00002c90   Section        0  usbhw.o(i.USB_Suspend)
+    i.USB_WakeUpCfg                          0x00002c92   Section        0  usbhw.o(i.USB_WakeUpCfg)
+    i.USB_WriteEP                            0x00002c94   Section        0  usbhw.o(i.USB_WriteEP)
+    i.WrCmd                                  0x00002d04   Section        0  usbhw.o(i.WrCmd)
+    i.WrCmdDat                               0x00002d2c   Section        0  usbhw.o(i.WrCmdDat)
+    i.WriteLE16U                             0x00002d6c   Section        0  usbhost_lpc17xx.o(i.WriteLE16U)
+    i.__0printf$5                            0x00002d7c   Section        0  printf5.o(i.__0printf$5)
+    i.__scatterload_copy                     0x00002d9c   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00002daa   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00002dac   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x00002dbc   Section        0  printf5.o(i._printf_core)
+    _printf_core                             0x00002dbd   Thumb Code   676  printf5.o(i._printf_core)
+    i.check_failed                           0x0000308c   Section        0  lpc17xx_libcfg_default.o(i.check_failed)
+    i.chk_power                              0x00003090   Section        0  mmc.o(i.chk_power)
+    chk_power                                0x00003091   Thumb Code     4  mmc.o(i.chk_power)
+    i.debug_frmwrk_init                      0x00003094   Section        0  debug_frmwrk.o(i.debug_frmwrk_init)
+    i.delay                                  0x00003174   Section        0  main.o(i.delay)
+    i.deselect                               0x00003180   Section        0  mmc.o(i.deselect)
+    deselect                                 0x00003181   Thumb Code    18  mmc.o(i.deselect)
+    i.disk_initialize                        0x00003194   Section        0  mmc.o(i.disk_initialize)
+    i.disk_ioctl                             0x000032e0   Section        0  mmc.o(i.disk_ioctl)
+    i.disk_read                              0x0000354c   Section        0  mmc.o(i.disk_read)
+    i.disk_timerproc                         0x000035e0   Section        0  mmc.o(i.disk_timerproc)
+    i.disk_write                             0x00003640   Section        0  mmc.o(i.disk_write)
+    i.fputc                                  0x000036f4   Section        0  main.o(i.fputc)
+    i.main                                   0x00003718   Section        0  main.o(i.main)
+    i.power_off                              0x000038f4   Section        0  mmc.o(i.power_off)
+    power_off                                0x000038f5   Thumb Code     2  mmc.o(i.power_off)
+    i.power_on                               0x000038f6   Section        0  mmc.o(i.power_on)
+    power_on                                 0x000038f7   Thumb Code     2  mmc.o(i.power_on)
+    i.rcvr_datablock                         0x000038f8   Section        0  mmc.o(i.rcvr_datablock)
+    rcvr_datablock                           0x000038f9   Thumb Code   116  mmc.o(i.rcvr_datablock)
+    i.rcvr_spi                               0x00003970   Section        0  mmc.o(i.rcvr_spi)
+    rcvr_spi                                 0x00003971   Thumb Code    20  mmc.o(i.rcvr_spi)
+    i.select                                 0x00003984   Section        0  mmc.o(i.select)
+    select                                   0x00003985   Thumb Code    32  mmc.o(i.select)
+    i.send_cmd                               0x000039a4   Section        0  mmc.o(i.send_cmd)
+    send_cmd                                 0x000039a5   Thumb Code   142  mmc.o(i.send_cmd)
+    i.setSSPclock                            0x00003a34   Section        0  lpc17xx_ssp.o(i.setSSPclock)
+    i.set_OpenDrainMode                      0x00003b00   Section        0  lpc17xx_pinsel.o(i.set_OpenDrainMode)
+    set_OpenDrainMode                        0x00003b01   Thumb Code    42  lpc17xx_pinsel.o(i.set_OpenDrainMode)
+    i.set_PinFunc                            0x00003b30   Section        0  lpc17xx_pinsel.o(i.set_PinFunc)
+    set_PinFunc                              0x00003b31   Thumb Code    60  lpc17xx_pinsel.o(i.set_PinFunc)
+    i.set_ResistorMode                       0x00003b70   Section        0  lpc17xx_pinsel.o(i.set_ResistorMode)
+    set_ResistorMode                         0x00003b71   Thumb Code    60  lpc17xx_pinsel.o(i.set_ResistorMode)
+    i.spi_set_speed                          0x00003bb0   Section        0  ssp.o(i.spi_set_speed)
+    spi_set_speed                            0x00003bb1   Thumb Code    26  ssp.o(i.spi_set_speed)
+    i.sspClockFast                           0x00003bd8   Section        0  ssp.o(i.sspClockFast)
+    i.sspClockSlow                           0x00003be2   Section        0  ssp.o(i.sspClockSlow)
+    i.sspInit                                0x00003bec   Section        0  ssp.o(i.sspInit)
+    i.sspReceive                             0x00003c94   Section        0  ssp.o(i.sspReceive)
+    i.sspSend                                0x00003cc4   Section        0  ssp.o(i.sspSend)
+    i.uart_set_divisors                      0x00003d04   Section        0  lpc17xx_uart.o(i.uart_set_divisors)
+    uart_set_divisors                        0x00003d05   Thumb Code   532  lpc17xx_uart.o(i.uart_set_divisors)
+    i.wait_ready                             0x00003f28   Section        0  mmc.o(i.wait_ready)
+    wait_ready                               0x00003f29   Thumb Code    36  mmc.o(i.wait_ready)
+    i.xmit_datablock                         0x00003f50   Section        0  mmc.o(i.xmit_datablock)
+    xmit_datablock                           0x00003f51   Thumb Code    94  mmc.o(i.xmit_datablock)
+    i.xmit_spi                               0x00003fae   Section        0  mmc.o(i.xmit_spi)
+    xmit_spi                                 0x00003faf   Thumb Code    12  mmc.o(i.xmit_spi)
+    .constdata                               0x00003fba   Section      163  usbdesc.o(.constdata)
+    .constdata                               0x00004060   Section       64  usbuser.o(.constdata)
+    .constdata                               0x000040a0   Section       68  lpc17xx_uart.o(.constdata)
+    .constdata                               0x000040e4   Section       13  usbhost_lpc17xx.o(.constdata)
+    __FUNCTION__                             0x000040e4   Data          13  usbhost_lpc17xx.o(.constdata)
+    .data                                    0x10000000   Section       12  main.o(.data)
+    .data                                    0x1000000c   Section        5  mmc.o(.data)
+    Stat                                     0x1000000c   Data           1  mmc.o(.data)
+    pv                                       0x1000000d   Data           1  mmc.o(.data)
+    Timer1                                   0x1000000e   Data           1  mmc.o(.data)
+    Timer2                                   0x1000000f   Data           1  mmc.o(.data)
+    CardType                                 0x10000010   Data           1  mmc.o(.data)
+    .data                                    0x10000014   Section       18  mscuser.o(.data)
+    .data                                    0x10000028   Section       36  usbcore.o(.data)
+    .data                                    0x1000004c   Section        8  usbhw.o(.data)
+    .data                                    0x10000054   Section       40  debug_frmwrk.o(.data)
+    .data                                    0x1000007c   Section        4  system_lpc17xx.o(.data)
+    .data                                    0x10000080   Section       56  usbhost_lpc17xx.o(.data)
+    .data                                    0x100000b8   Section        4  stdout.o(.data)
+    .bss                                     0x100000bc   Section     8812  mscuser.o(.bss)
+    .bss                                     0x10002328   Section       64  usbcore.o(.bss)
+    .bss                                     0x10002368   Section      128  usbhw.o(.bss)
+    STACK                                    0x100023e8   Section      512  startup_lpc17xx.o(STACK)
+    USB_RAM                                  0x100025e8   Section      544  usbhw.o(USB_RAM)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_lpc17xx.o(RESET)
+    _printf_a                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_c                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_charcount                        0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_d                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_e                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_f                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_flags                            0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_fp_dec                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_fp_hex                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_g                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_i                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_int_dec                          0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_l                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lc                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_ll                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lld                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lli                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llo                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llu                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llx                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_dec                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_hex                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_oct                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_ls                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_mbtowc                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_n                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_o                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_p                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_percent                          0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_pre_padding                      0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_return_value                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_s                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_sizespec                         0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_str                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_truncate_signed                  0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_truncate_unsigned                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_u                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_wc                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_wctomb                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_widthprec                        0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_x                                0x00000000   Number         0  stubs.o ABSOLUTE
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    __main                                   0x000000cd   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000cd   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000d1   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000d5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000d5   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_init                               0x000000d5   Thumb Code     0  entry8.o(.ARM.Collect$$$$00000009)
+    Reset_Handler                            0x000000e1   Thumb Code     8  startup_lpc17xx.o(.text)
+    NMI_Handler                              0x000000e9   Thumb Code     2  startup_lpc17xx.o(.text)
+    HardFault_Handler                        0x000000eb   Thumb Code     2  startup_lpc17xx.o(.text)
+    MemManage_Handler                        0x000000ed   Thumb Code     2  startup_lpc17xx.o(.text)
+    BusFault_Handler                         0x000000ef   Thumb Code     2  startup_lpc17xx.o(.text)
+    UsageFault_Handler                       0x000000f1   Thumb Code     2  startup_lpc17xx.o(.text)
+    SVC_Handler                              0x000000f3   Thumb Code     2  startup_lpc17xx.o(.text)
+    DebugMon_Handler                         0x000000f5   Thumb Code     2  startup_lpc17xx.o(.text)
+    PendSV_Handler                           0x000000f7   Thumb Code     2  startup_lpc17xx.o(.text)
+    ADC_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    BOD_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    CANActivity_IRQHandler                   0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    CAN_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    DMA_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT0_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT1_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT2_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT3_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    ENET_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2C0_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2C1_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2C2_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2S_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    MCPWM_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    PLL0_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    PLL1_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    PWM1_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    QEI_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    RIT_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    RTC_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    SPI_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    SSP0_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    SSP1_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    TIMER0_IRQHandler                        0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    TIMER1_IRQHandler                        0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    TIMER2_IRQHandler                        0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    TIMER3_IRQHandler                        0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART0_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART1_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART2_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART3_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    USBActivity_IRQHandler                   0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    WDT_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    __aeabi_uldivmod                         0x00000105   Thumb Code    98  uldiv.o(.text)
+    __aeabi_llsl                             0x00000167   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x00000167   Thumb Code     0  llshl.o(.text)
+    __aeabi_llsr                             0x00000185   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x00000185   Thumb Code     0  llushr.o(.text)
+    __scatterload                            0x000001a5   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x000001a5   Thumb Code     0  init.o(.text)
+    CLKPWR_ConfigPPWR                        0x000001c9   Thumb Code    50  lpc17xx_clkpwr.o(i.CLKPWR_ConfigPPWR)
+    CLKPWR_GetPCLK                           0x00000209   Thumb Code    58  lpc17xx_clkpwr.o(i.CLKPWR_GetPCLK)
+    CLKPWR_GetPCLKSEL                        0x00000249   Thumb Code    32  lpc17xx_clkpwr.o(i.CLKPWR_GetPCLKSEL)
+    CLKPWR_SetPCLKDiv                        0x00000271   Thumb Code   106  lpc17xx_clkpwr.o(i.CLKPWR_SetPCLKDiv)
+    EPAdr                                    0x000002e9   Thumb Code    16  usbhw.o(i.EPAdr)
+    USB_Configure_Event                      0x000002f9   Thumb Code     2  usbuser.o(i.USB_Configure_Event)
+    USB_DirCtrlEP                            0x000002fb   Thumb Code     2  usbhw.o(i.USB_DirCtrlEP)
+    DataInFormat                             0x00000301   Thumb Code    56  mscuser.o(i.DataInFormat)
+    DataInTransfer                           0x00000341   Thumb Code    60  mscuser.o(i.DataInTransfer)
+    Delay                                    0x00000391   Thumb Code    18  mmc.o(i.Delay)
+    GPIO_ClearValue                          0x000003a9   Thumb Code    20  lpc17xx_gpio.o(i.GPIO_ClearValue)
+    GPIO_ReadValue                           0x000003f5   Thumb Code    22  lpc17xx_gpio.o(i.GPIO_ReadValue)
+    GPIO_SetDir                              0x0000040b   Thumb Code    40  lpc17xx_gpio.o(i.GPIO_SetDir)
+    GPIO_SetValue                            0x00000433   Thumb Code    20  lpc17xx_gpio.o(i.GPIO_SetValue)
+    Host_CtrlRecv                            0x00000449   Thumb Code    98  usbhost_lpc17xx.o(i.Host_CtrlRecv)
+    Host_CtrlSend                            0x000004b5   Thumb Code    98  usbhost_lpc17xx.o(i.Host_CtrlSend)
+    Host_DelayMS                             0x00000521   Thumb Code    24  usbhost_lpc17xx.o(i.Host_DelayMS)
+    Host_DelayUS                             0x00000539   Thumb Code    14  usbhost_lpc17xx.o(i.Host_DelayUS)
+    Host_EDInit                              0x00000547   Thumb Code    12  usbhost_lpc17xx.o(i.Host_EDInit)
+    Host_EnumDev                             0x00000555   Thumb Code   360  usbhost_lpc17xx.o(i.Host_EnumDev)
+    Host_FillSetup                           0x00000759   Thumb Code    86  usbhost_lpc17xx.o(i.Host_FillSetup)
+    Host_HCCAInit                            0x000007b5   Thumb Code    26  usbhost_lpc17xx.o(i.Host_HCCAInit)
+    Host_Init                                0x000007d1   Thumb Code   330  usbhost_lpc17xx.o(i.Host_Init)
+    Host_ProcessTD                           0x00000979   Thumb Code   208  usbhost_lpc17xx.o(i.Host_ProcessTD)
+    Host_TDInit                              0x00000a5d   Thumb Code    12  usbhost_lpc17xx.o(i.Host_TDInit)
+    Host_WDHWait                             0x00000a69   Thumb Code    18  usbhost_lpc17xx.o(i.Host_WDHWait)
+    MSC_BulkIn                               0x00000a81   Thumb Code    80  mscuser.o(i.MSC_BulkIn)
+    MSC_BulkOut                              0x00000ad9   Thumb Code    96  mscuser.o(i.MSC_BulkOut)
+    MSC_GetCBW                               0x00000b4d   Thumb Code   422  mscuser.o(i.MSC_GetCBW)
+    MSC_GetMaxLUN                            0x00000d1d   Thumb Code    10  mscuser.o(i.MSC_GetMaxLUN)
+    MSC_Inquiry                              0x00000d2d   Thumb Code   162  mscuser.o(i.MSC_Inquiry)
+    MSC_MemoryRead                           0x00000dd9   Thumb Code   132  mscuser.o(i.MSC_MemoryRead)
+    MSC_MemoryVerify                         0x00000e6d   Thumb Code     8  mscuser.o(i.MSC_MemoryVerify)
+    MSC_MemoryWrite                          0x00000e79   Thumb Code   166  mscuser.o(i.MSC_MemoryWrite)
+    MSC_ModeSense10                          0x00000f41   Thumb Code    48  mscuser.o(i.MSC_ModeSense10)
+    MSC_ModeSense6                           0x00000f79   Thumb Code    38  mscuser.o(i.MSC_ModeSense6)
+    MSC_RWSetup                              0x00000fa9   Thumb Code   200  mscuser.o(i.MSC_RWSetup)
+    MSC_ReadCapacity                         0x00001081   Thumb Code    86  mscuser.o(i.MSC_ReadCapacity)
+    MSC_ReadFormatCapacity                   0x000010e1   Thumb Code    94  mscuser.o(i.MSC_ReadFormatCapacity)
+    MSC_RequestSense                         0x00001149   Thumb Code    80  mscuser.o(i.MSC_RequestSense)
+    MSC_Reset                                0x000011a1   Thumb Code    10  mscuser.o(i.MSC_Reset)
+    MSC_SetCSW                               0x000011b1   Thumb Code    24  mscuser.o(i.MSC_SetCSW)
+    MSC_TestUnitReady                        0x000011d5   Thumb Code    44  mscuser.o(i.MSC_TestUnitReady)
+    PINSEL_ConfigPin                         0x00001209   Thumb Code    36  lpc17xx_pinsel.o(i.PINSEL_ConfigPin)
+    RdCmdDat                                 0x0000122d   Thumb Code    32  usbhw.o(i.RdCmdDat)
+    ReadLE16U                                0x0000125d   Thumb Code    22  usbhost_lpc17xx.o(i.ReadLE16U)
+    SDInit                                   0x00001273   Thumb Code    32  main.o(i.SDInit)
+    SSP_Cmd                                  0x00001295   Thumb Code    68  lpc17xx_ssp.o(i.SSP_Cmd)
+    SSP_ConfigStructInit                     0x00001321   Thumb Code    22  lpc17xx_ssp.o(i.SSP_ConfigStructInit)
+    SSP_Init                                 0x0000133d   Thumb Code   100  lpc17xx_ssp.o(i.SSP_Init)
+    SysTick_Handler                          0x000013e9   Thumb Code    40  main.o(i.SysTick_Handler)
+    SystemInit                               0x00001419   Thumb Code   282  system_lpc17xx.o(i.SystemInit)
+    UARTGetChar                              0x00001579   Thumb Code    26  debug_frmwrk.o(i.UARTGetChar)
+    UARTPutChar                              0x00001593   Thumb Code    18  debug_frmwrk.o(i.UARTPutChar)
+    UARTPutDec                               0x000015a5   Thumb Code    96  debug_frmwrk.o(i.UARTPutDec)
+    UARTPutDec16                             0x00001605   Thumb Code   160  debug_frmwrk.o(i.UARTPutDec16)
+    UARTPutDec32                             0x000016a5   Thumb Code   280  debug_frmwrk.o(i.UARTPutDec32)
+    UARTPutHex                               0x000017d1   Thumb Code    66  debug_frmwrk.o(i.UARTPutHex)
+    UARTPutHex16                             0x00001819   Thumb Code    66  debug_frmwrk.o(i.UARTPutHex16)
+    UARTPutHex32                             0x00001861   Thumb Code    66  debug_frmwrk.o(i.UARTPutHex32)
+    UARTPuts                                 0x000018a9   Thumb Code    28  debug_frmwrk.o(i.UARTPuts)
+    UARTPuts_                                0x000018c5   Thumb Code    24  debug_frmwrk.o(i.UARTPuts_)
+    UART_CheckBusy                           0x000018e1   Thumb Code    18  lpc17xx_uart.o(i.UART_CheckBusy)
+    UART_ConfigStructInit                    0x000018f3   Thumb Code    18  lpc17xx_uart.o(i.UART_ConfigStructInit)
+    UART_Init                                0x00001905   Thumb Code   482  lpc17xx_uart.o(i.UART_Init)
+    UART_Receive                             0x00001afd   Thumb Code   122  lpc17xx_uart.o(i.UART_Receive)
+    UART_ReceiveByte                         0x00001b79   Thumb Code    54  lpc17xx_uart.o(i.UART_ReceiveByte)
+    UART_Send                                0x00001bc5   Thumb Code   150  lpc17xx_uart.o(i.UART_Send)
+    UART_SendByte                            0x00001c5d   Thumb Code    56  lpc17xx_uart.o(i.UART_SendByte)
+    UART_TxCmd                               0x00001ca9   Thumb Code   128  lpc17xx_uart.o(i.UART_TxCmd)
+    USB_ClrStallEP                           0x00001d3d   Thumb Code    26  usbhw.o(i.USB_ClrStallEP)
+    USB_ConfigEP                             0x00001d5d   Thumb Code    66  usbhw.o(i.USB_ConfigEP)
+    USB_Configure                            0x00001db5   Thumb Code    54  usbhw.o(i.USB_Configure)
+    USB_Connect                              0x00001dfd   Thumb Code    28  usbhw.o(i.USB_Connect)
+    USB_DataInStage                          0x00001e1d   Thumb Code    52  usbcore.o(i.USB_DataInStage)
+    USB_DataOutStage                         0x00001e55   Thumb Code    34  usbcore.o(i.USB_DataOutStage)
+    USB_DisableEP                            0x00001e7d   Thumb Code    26  usbhw.o(i.USB_DisableEP)
+    USB_EnableEP                             0x00001ea1   Thumb Code    26  usbhw.o(i.USB_EnableEP)
+    USB_EndPoint0                            0x00001ec1   Thumb Code   596  usbcore.o(i.USB_EndPoint0)
+    USB_EndPoint2                            0x00002131   Thumb Code    30  usbuser.o(i.USB_EndPoint2)
+    USB_GetDescriptor                        0x00002151   Thumb Code   146  usbcore.o(i.USB_GetDescriptor)
+    USB_GetStatus                            0x000021f9   Thumb Code   174  usbcore.o(i.USB_GetStatus)
+    USB_IRQHandler                           0x000022c9   Thumb Code   668  usbhw.o(i.USB_IRQHandler)
+    USB_Init                                 0x00002609   Thumb Code   138  usbhw.o(i.USB_Init)
+    USB_ReadEP                               0x000026b1   Thumb Code   114  usbhw.o(i.USB_ReadEP)
+    USB_Reset                                0x00002735   Thumb Code   162  usbhw.o(i.USB_Reset)
+    USB_ResetCore                            0x00002819   Thumb Code    30  usbcore.o(i.USB_ResetCore)
+    USB_ResetEP                              0x0000284d   Thumb Code    26  usbhw.o(i.USB_ResetEP)
+    USB_Reset_Event                          0x0000286d   Thumb Code     8  usbuser.o(i.USB_Reset_Event)
+    USB_Resume                               0x00002875   Thumb Code     2  usbhw.o(i.USB_Resume)
+    USB_SetAddress                           0x00002879   Thumb Code    42  usbhw.o(i.USB_SetAddress)
+    USB_SetClrFeature                        0x000028a9   Thumb Code   198  usbcore.o(i.USB_SetClrFeature)
+    USB_SetConfiguration                     0x00002985   Thumb Code   380  usbcore.o(i.USB_SetConfiguration)
+    USB_SetInterface                         0x00002b21   Thumb Code   258  usbcore.o(i.USB_SetInterface)
+    USB_SetStallEP                           0x00002c3d   Thumb Code    26  usbhw.o(i.USB_SetStallEP)
+    USB_SetupStage                           0x00002c61   Thumb Code    12  usbcore.o(i.USB_SetupStage)
+    USB_StatusInStage                        0x00002c71   Thumb Code    14  usbcore.o(i.USB_StatusInStage)
+    USB_StatusOutStage                       0x00002c81   Thumb Code    12  usbcore.o(i.USB_StatusOutStage)
+    USB_Suspend                              0x00002c91   Thumb Code     2  usbhw.o(i.USB_Suspend)
+    USB_WakeUpCfg                            0x00002c93   Thumb Code     2  usbhw.o(i.USB_WakeUpCfg)
+    USB_WriteEP                              0x00002c95   Thumb Code    94  usbhw.o(i.USB_WriteEP)
+    WrCmd                                    0x00002d05   Thumb Code    26  usbhw.o(i.WrCmd)
+    WrCmdDat                                 0x00002d2d   Thumb Code    50  usbhw.o(i.WrCmdDat)
+    WriteLE16U                               0x00002d6d   Thumb Code    16  usbhost_lpc17xx.o(i.WriteLE16U)
+    __0printf$5                              0x00002d7d   Thumb Code    22  printf5.o(i.__0printf$5)
+    __1printf$5                              0x00002d7d   Thumb Code     0  printf5.o(i.__0printf$5)
+    __2printf                                0x00002d7d   Thumb Code     0  printf5.o(i.__0printf$5)
+    __scatterload_copy                       0x00002d9d   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00002dab   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00002dad   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    check_failed                             0x0000308d   Thumb Code     4  lpc17xx_libcfg_default.o(i.check_failed)
+    debug_frmwrk_init                        0x00003095   Thumb Code   138  debug_frmwrk.o(i.debug_frmwrk_init)
+    delay                                    0x00003175   Thumb Code    12  main.o(i.delay)
+    disk_initialize                          0x00003195   Thumb Code   320  mmc.o(i.disk_initialize)
+    disk_ioctl                               0x000032e1   Thumb Code   610  mmc.o(i.disk_ioctl)
+    disk_read                                0x0000354d   Thumb Code   138  mmc.o(i.disk_read)
+    disk_timerproc                           0x000035e1   Thumb Code    78  mmc.o(i.disk_timerproc)
+    disk_write                               0x00003641   Thumb Code   172  mmc.o(i.disk_write)
+    fputc                                    0x000036f5   Thumb Code    30  main.o(i.fputc)
+    main                                     0x00003719   Thumb Code   302  main.o(i.main)
+    setSSPclock                              0x00003a35   Thumb Code   130  lpc17xx_ssp.o(i.setSSPclock)
+    sspClockFast                             0x00003bd9   Thumb Code    10  ssp.o(i.sspClockFast)
+    sspClockSlow                             0x00003be3   Thumb Code    10  ssp.o(i.sspClockSlow)
+    sspInit                                  0x00003bed   Thumb Code   164  ssp.o(i.sspInit)
+    sspReceive                               0x00003c95   Thumb Code    42  ssp.o(i.sspReceive)
+    sspSend                                  0x00003cc5   Thumb Code    58  ssp.o(i.sspSend)
+    USB_DeviceDescriptor                     0x00003fba   Data          18  usbdesc.o(.constdata)
+    USB_ConfigDescriptor                     0x00003fcc   Data          33  usbdesc.o(.constdata)
+    USB_StringDescriptor                     0x00003fed   Data         112  usbdesc.o(.constdata)
+    USB_P_EP                                 0x00004060   Data          64  usbuser.o(.constdata)
+    Region$$Table$$Base                      0x000040f4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00004114   Number         0  anon$$obj.o(Region$$Table)
+    UsbMode                                  0x10000000   Data           1  main.o(.data)
+    mmcTicks                                 0x10000004   Data           4  main.o(.data)
+    msTicks                                  0x10000008   Data           4  main.o(.data)
+    temp_cache                               0x10000014   Data           4  mscuser.o(.data)
+    MemOK                                    0x10000018   Data           4  mscuser.o(.data)
+    Offset                                   0x1000001c   Data           4  mscuser.o(.data)
+    Length                                   0x10000020   Data           4  mscuser.o(.data)
+    BulkStage                                0x10000024   Data           1  mscuser.o(.data)
+    BulkLen                                  0x10000025   Data           1  mscuser.o(.data)
+    USB_DeviceStatus                         0x10000028   Data           2  usbcore.o(.data)
+    USB_DeviceAddress                        0x1000002a   Data           1  usbcore.o(.data)
+    USB_Configuration                        0x1000002b   Data           1  usbcore.o(.data)
+    USB_EndPointMask                         0x1000002c   Data           4  usbcore.o(.data)
+    USB_EndPointHalt                         0x10000030   Data           4  usbcore.o(.data)
+    USB_NumInterfaces                        0x10000034   Data           1  usbcore.o(.data)
+    USB_AltSetting                           0x10000035   Data           4  usbcore.o(.data)
+    EP0Data                                  0x1000003c   Data           8  usbcore.o(.data)
+    SetupPacket                              0x10000044   Data           8  usbcore.o(.data)
+    DDMemMap                                 0x1000004c   Data           8  usbhw.o(.data)
+    _db_msg                                  0x10000054   Data           4  debug_frmwrk.o(.data)
+    _db_msg_                                 0x10000058   Data           4  debug_frmwrk.o(.data)
+    _db_char                                 0x1000005c   Data           4  debug_frmwrk.o(.data)
+    _db_dec                                  0x10000060   Data           4  debug_frmwrk.o(.data)
+    _db_dec_16                               0x10000064   Data           4  debug_frmwrk.o(.data)
+    _db_dec_32                               0x10000068   Data           4  debug_frmwrk.o(.data)
+    _db_hex                                  0x1000006c   Data           4  debug_frmwrk.o(.data)
+    _db_hex_16                               0x10000070   Data           4  debug_frmwrk.o(.data)
+    _db_hex_32                               0x10000074   Data           4  debug_frmwrk.o(.data)
+    _db_get_char                             0x10000078   Data           4  debug_frmwrk.o(.data)
+    SystemCoreClock                          0x1000007c   Data           4  system_lpc17xx.o(.data)
+    HOST_RhscIntr                            0x10000080   Data           4  usbhost_lpc17xx.o(.data)
+    HOST_WdhIntr                             0x10000084   Data           4  usbhost_lpc17xx.o(.data)
+    HOST_TDControlStatus                     0x10000088   Data           1  usbhost_lpc17xx.o(.data)
+    gUSBConnected                            0x1000008c   Data           4  usbhost_lpc17xx.o(.data)
+    EDCtrl                                   0x10000090   Data           4  usbhost_lpc17xx.o(.data)
+    EDBulkIn                                 0x10000094   Data           4  usbhost_lpc17xx.o(.data)
+    EDBulkOut                                0x10000098   Data           4  usbhost_lpc17xx.o(.data)
+    TDHead                                   0x1000009c   Data           4  usbhost_lpc17xx.o(.data)
+    TDTail                                   0x100000a0   Data           4  usbhost_lpc17xx.o(.data)
+    Hcca                                     0x100000a4   Data           4  usbhost_lpc17xx.o(.data)
+    TDBufNonVol                              0x100000a8   Data           4  usbhost_lpc17xx.o(.data)
+    TDBuffer                                 0x100000ac   Data           4  usbhost_lpc17xx.o(.data)
+    FATBuffer                                0x100000b0   Data           4  usbhost_lpc17xx.o(.data)
+    UserBuffer                               0x100000b4   Data           4  usbhost_lpc17xx.o(.data)
+    __stdout                                 0x100000b8   Data           4  stdout.o(.data)
+    Memory                                   0x100000bc   Data        8192  mscuser.o(.bss)
+    BulkBuf                                  0x100020bc   Data          64  mscuser.o(.bss)
+    CBW                                      0x100020fc   Data          31  mscuser.o(.bss)
+    CSW                                      0x1000211b   Data          13  mscuser.o(.bss)
+    temp_block                               0x10002128   Data         512  mscuser.o(.bss)
+    EP0Buf                                   0x10002328   Data          64  usbcore.o(.bss)
+    udca                                     0x10002368   Data         128  usbhw.o(.bss)
+    UDCA                                     0x100025e8   Data         128  usbhw.o(USB_RAM)
+    __initial_sp                             0x100025e8   Data           0  startup_lpc17xx.o(STACK)
+    DD_NISO_Mem                              0x10002668   Data         256  usbhw.o(USB_RAM)
+    DD_ISO_Mem                               0x10002768   Data         160  usbhw.o(USB_RAM)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000cd
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000041d0, Max: 0x00080000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00004114, Max: 0x00080000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x000000cc   Data   RO         2083    RESET               startup_lpc17xx.o
+    0x000000cc   0x00000000   Code   RO         2236  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000000cc   0x00000004   Code   RO         2510    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000000d0   0x00000004   Code   RO         2513    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000000d4   0x00000000   Code   RO         2515    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000000d4   0x00000008   Code   RO         2516    .ARM.Collect$$$$00000009  mc_w.l(entry8.o)
+    0x000000dc   0x00000004   Code   RO         2511    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000000e0   0x00000024   Code   RO         2085    .text               startup_lpc17xx.o
+    0x00000104   0x00000062   Code   RO         2239    .text               mc_w.l(uldiv.o)
+    0x00000166   0x0000001e   Code   RO         2241    .text               mc_w.l(llshl.o)
+    0x00000184   0x00000020   Code   RO         2243    .text               mc_w.l(llushr.o)
+    0x000001a4   0x00000024   Code   RO         2533    .text               mc_w.l(init.o)
+    0x000001c8   0x00000040   Code   RO         1089    i.CLKPWR_ConfigPPWR  lpc17xx_clkpwr.o
+    0x00000208   0x00000040   Code   RO         1092    i.CLKPWR_GetPCLK    lpc17xx_clkpwr.o
+    0x00000248   0x00000028   Code   RO         1093    i.CLKPWR_GetPCLKSEL  lpc17xx_clkpwr.o
+    0x00000270   0x00000078   Code   RO         1095    i.CLKPWR_SetPCLKDiv  lpc17xx_clkpwr.o
+    0x000002e8   0x00000010   Code   RO          571    i.EPAdr             usbhw.o
+    0x000002f8   0x00000002   Code   RO          783    i.USB_Configure_Event  usbuser.o
+    0x000002fa   0x00000002   Code   RO          583    i.USB_DirCtrlEP     usbhw.o
+    0x000002fc   0x00000004   Code   RO         2084    .ARM.__at_0x02FC    startup_lpc17xx.o
+    0x00000300   0x00000040   Code   RO          321    i.DataInFormat      mscuser.o
+    0x00000340   0x00000050   Code   RO          322    i.DataInTransfer    mscuser.o
+    0x00000390   0x00000018   Code   RO          129    i.Delay             mmc.o
+    0x000003a8   0x00000014   Code   RO         1223    i.GPIO_ClearValue   lpc17xx_gpio.o
+    0x000003bc   0x00000038   Code   RO         1225    i.GPIO_GetPointer   lpc17xx_gpio.o
+    0x000003f4   0x00000016   Code   RO         1227    i.GPIO_ReadValue    lpc17xx_gpio.o
+    0x0000040a   0x00000028   Code   RO         1228    i.GPIO_SetDir       lpc17xx_gpio.o
+    0x00000432   0x00000014   Code   RO         1229    i.GPIO_SetValue     lpc17xx_gpio.o
+    0x00000446   0x00000002   PAD
+    0x00000448   0x0000006c   Code   RO         2093    i.Host_CtrlRecv     usbhost_lpc17xx.o
+    0x000004b4   0x0000006c   Code   RO         2094    i.Host_CtrlSend     usbhost_lpc17xx.o
+    0x00000520   0x00000018   Code   RO         2095    i.Host_DelayMS      usbhost_lpc17xx.o
+    0x00000538   0x0000000e   Code   RO         2096    i.Host_DelayUS      usbhost_lpc17xx.o
+    0x00000546   0x0000000c   Code   RO         2097    i.Host_EDInit       usbhost_lpc17xx.o
+    0x00000552   0x00000002   PAD
+    0x00000554   0x00000204   Code   RO         2098    i.Host_EnumDev      usbhost_lpc17xx.o
+    0x00000758   0x0000005c   Code   RO         2099    i.Host_FillSetup    usbhost_lpc17xx.o
+    0x000007b4   0x0000001a   Code   RO         2100    i.Host_HCCAInit     usbhost_lpc17xx.o
+    0x000007ce   0x00000002   PAD
+    0x000007d0   0x000001a8   Code   RO         2101    i.Host_Init         usbhost_lpc17xx.o
+    0x00000978   0x000000e4   Code   RO         2102    i.Host_ProcessTD    usbhost_lpc17xx.o
+    0x00000a5c   0x0000000c   Code   RO         2103    i.Host_TDInit       usbhost_lpc17xx.o
+    0x00000a68   0x00000018   Code   RO         2104    i.Host_WDHWait      usbhost_lpc17xx.o
+    0x00000a80   0x00000058   Code   RO          323    i.MSC_BulkIn        mscuser.o
+    0x00000ad8   0x00000074   Code   RO          324    i.MSC_BulkOut       mscuser.o
+    0x00000b4c   0x000001d0   Code   RO          325    i.MSC_GetCBW        mscuser.o
+    0x00000d1c   0x00000010   Code   RO          326    i.MSC_GetMaxLUN     mscuser.o
+    0x00000d2c   0x000000ac   Code   RO          327    i.MSC_Inquiry       mscuser.o
+    0x00000dd8   0x00000094   Code   RO          328    i.MSC_MemoryRead    mscuser.o
+    0x00000e6c   0x0000000c   Code   RO          329    i.MSC_MemoryVerify  mscuser.o
+    0x00000e78   0x000000c8   Code   RO          330    i.MSC_MemoryWrite   mscuser.o
+    0x00000f40   0x00000038   Code   RO          331    i.MSC_ModeSense10   mscuser.o
+    0x00000f78   0x00000030   Code   RO          332    i.MSC_ModeSense6    mscuser.o
+    0x00000fa8   0x000000d8   Code   RO          333    i.MSC_RWSetup       mscuser.o
+    0x00001080   0x00000060   Code   RO          334    i.MSC_ReadCapacity  mscuser.o
+    0x000010e0   0x00000068   Code   RO          335    i.MSC_ReadFormatCapacity  mscuser.o
+    0x00001148   0x00000058   Code   RO          336    i.MSC_RequestSense  mscuser.o
+    0x000011a0   0x00000010   Code   RO          337    i.MSC_Reset         mscuser.o
+    0x000011b0   0x00000024   Code   RO          338    i.MSC_SetCSW        mscuser.o
+    0x000011d4   0x00000034   Code   RO          339    i.MSC_TestUnitReady  mscuser.o
+    0x00001208   0x00000024   Code   RO         1428    i.PINSEL_ConfigPin  lpc17xx_pinsel.o
+    0x0000122c   0x00000030   Code   RO          572    i.RdCmdDat          usbhw.o
+    0x0000125c   0x00000016   Code   RO         2107    i.ReadLE16U         usbhost_lpc17xx.o
+    0x00001272   0x00000020   Code   RO            3    i.SDInit            main.o
+    0x00001292   0x00000002   PAD
+    0x00001294   0x0000008c   Code   RO         1571    i.SSP_Cmd           lpc17xx_ssp.o
+    0x00001320   0x0000001c   Code   RO         1572    i.SSP_ConfigStructInit  lpc17xx_ssp.o
+    0x0000133c   0x000000ac   Code   RO         1580    i.SSP_Init          lpc17xx_ssp.o
+    0x000013e8   0x00000030   Code   RO            4    i.SysTick_Handler   main.o
+    0x00001418   0x00000160   Code   RO         2052    i.SystemInit        system_lpc17xx.o
+    0x00001578   0x0000001a   Code   RO          905    i.UARTGetChar       debug_frmwrk.o
+    0x00001592   0x00000012   Code   RO          906    i.UARTPutChar       debug_frmwrk.o
+    0x000015a4   0x00000060   Code   RO          907    i.UARTPutDec        debug_frmwrk.o
+    0x00001604   0x000000a0   Code   RO          908    i.UARTPutDec16      debug_frmwrk.o
+    0x000016a4   0x0000012c   Code   RO          909    i.UARTPutDec32      debug_frmwrk.o
+    0x000017d0   0x00000048   Code   RO          910    i.UARTPutHex        debug_frmwrk.o
+    0x00001818   0x00000048   Code   RO          911    i.UARTPutHex16      debug_frmwrk.o
+    0x00001860   0x00000048   Code   RO          912    i.UARTPutHex32      debug_frmwrk.o
+    0x000018a8   0x0000001c   Code   RO          913    i.UARTPuts          debug_frmwrk.o
+    0x000018c4   0x0000001c   Code   RO          914    i.UARTPuts_         debug_frmwrk.o
+    0x000018e0   0x00000012   Code   RO         1859    i.UART_CheckBusy    lpc17xx_uart.o
+    0x000018f2   0x00000012   Code   RO         1860    i.UART_ConfigStructInit  lpc17xx_uart.o
+    0x00001904   0x000001f8   Code   RO         1870    i.UART_Init         lpc17xx_uart.o
+    0x00001afc   0x0000007a   Code   RO         1880    i.UART_Receive      lpc17xx_uart.o
+    0x00001b76   0x00000002   PAD
+    0x00001b78   0x0000004c   Code   RO         1881    i.UART_ReceiveByte  lpc17xx_uart.o
+    0x00001bc4   0x00000096   Code   RO         1882    i.UART_Send         lpc17xx_uart.o
+    0x00001c5a   0x00000002   PAD
+    0x00001c5c   0x0000004c   Code   RO         1883    i.UART_SendByte     lpc17xx_uart.o
+    0x00001ca8   0x00000094   Code   RO         1884    i.UART_TxCmd        lpc17xx_uart.o
+    0x00001d3c   0x00000020   Code   RO          573    i.USB_ClrStallEP    usbhw.o
+    0x00001d5c   0x00000058   Code   RO          574    i.USB_ConfigEP      usbhw.o
+    0x00001db4   0x00000048   Code   RO          575    i.USB_Configure     usbhw.o
+    0x00001dfc   0x00000020   Code   RO          576    i.USB_Connect       usbhw.o
+    0x00001e1c   0x00000038   Code   RO          454    i.USB_DataInStage   usbcore.o
+    0x00001e54   0x00000028   Code   RO          455    i.USB_DataOutStage  usbcore.o
+    0x00001e7c   0x00000024   Code   RO          584    i.USB_DisableEP     usbhw.o
+    0x00001ea0   0x00000020   Code   RO          585    i.USB_EnableEP      usbhw.o
+    0x00001ec0   0x00000270   Code   RO          456    i.USB_EndPoint0     usbcore.o
+    0x00002130   0x0000001e   Code   RO          791    i.USB_EndPoint2     usbuser.o
+    0x0000214e   0x00000002   PAD
+    0x00002150   0x000000a8   Code   RO          457    i.USB_GetDescriptor  usbcore.o
+    0x000021f8   0x000000d0   Code   RO          458    i.USB_GetStatus     usbcore.o
+    0x000022c8   0x00000340   Code   RO          587    i.USB_IRQHandler    usbhw.o
+    0x00002608   0x000000a8   Code   RO          588    i.USB_Init          usbhw.o
+    0x000026b0   0x00000084   Code   RO          589    i.USB_ReadEP        usbhw.o
+    0x00002734   0x000000e4   Code   RO          590    i.USB_Reset         usbhw.o
+    0x00002818   0x00000034   Code   RO          459    i.USB_ResetCore     usbcore.o
+    0x0000284c   0x00000020   Code   RO          591    i.USB_ResetEP       usbhw.o
+    0x0000286c   0x00000008   Code   RO          799    i.USB_Reset_Event   usbuser.o
+    0x00002874   0x00000002   Code   RO          592    i.USB_Resume        usbhw.o
+    0x00002876   0x00000002   PAD
+    0x00002878   0x00000030   Code   RO          593    i.USB_SetAddress    usbhw.o
+    0x000028a8   0x000000dc   Code   RO          460    i.USB_SetClrFeature  usbcore.o
+    0x00002984   0x0000019c   Code   RO          461    i.USB_SetConfiguration  usbcore.o
+    0x00002b20   0x0000011c   Code   RO          462    i.USB_SetInterface  usbcore.o
+    0x00002c3c   0x00000024   Code   RO          594    i.USB_SetStallEP    usbhw.o
+    0x00002c60   0x00000010   Code   RO          463    i.USB_SetupStage    usbcore.o
+    0x00002c70   0x0000000e   Code   RO          464    i.USB_StatusInStage  usbcore.o
+    0x00002c7e   0x00000002   PAD
+    0x00002c80   0x00000010   Code   RO          465    i.USB_StatusOutStage  usbcore.o
+    0x00002c90   0x00000002   Code   RO          595    i.USB_Suspend       usbhw.o
+    0x00002c92   0x00000002   Code   RO          597    i.USB_WakeUpCfg     usbhw.o
+    0x00002c94   0x00000070   Code   RO          598    i.USB_WriteEP       usbhw.o
+    0x00002d04   0x00000028   Code   RO          599    i.WrCmd             usbhw.o
+    0x00002d2c   0x00000040   Code   RO          600    i.WrCmdDat          usbhw.o
+    0x00002d6c   0x00000010   Code   RO         2111    i.WriteLE16U        usbhost_lpc17xx.o
+    0x00002d7c   0x00000020   Code   RO         2378    i.__0printf$5       mc_w.l(printf5.o)
+    0x00002d9c   0x0000000e   Code   RO         2541    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00002daa   0x00000002   Code   RO         2542    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00002dac   0x0000000e   Code   RO         2543    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00002dba   0x00000002   PAD
+    0x00002dbc   0x000002d0   Code   RO         2385    i._printf_core      mc_w.l(printf5.o)
+    0x0000308c   0x00000004   Code   RO         1379    i.check_failed      lpc17xx_libcfg_default.o
+    0x00003090   0x00000004   Code   RO          130    i.chk_power         mmc.o
+    0x00003094   0x000000e0   Code   RO          915    i.debug_frmwrk_init  debug_frmwrk.o
+    0x00003174   0x0000000c   Code   RO            5    i.delay             main.o
+    0x00003180   0x00000012   Code   RO          131    i.deselect          mmc.o
+    0x00003192   0x00000002   PAD
+    0x00003194   0x0000014c   Code   RO          132    i.disk_initialize   mmc.o
+    0x000032e0   0x0000026c   Code   RO          133    i.disk_ioctl        mmc.o
+    0x0000354c   0x00000094   Code   RO          134    i.disk_read         mmc.o
+    0x000035e0   0x00000060   Code   RO          136    i.disk_timerproc    mmc.o
+    0x00003640   0x000000b4   Code   RO          137    i.disk_write        mmc.o
+    0x000036f4   0x00000024   Code   RO            6    i.fputc             main.o
+    0x00003718   0x000001dc   Code   RO            7    i.main              main.o
+    0x000038f4   0x00000002   Code   RO          138    i.power_off         mmc.o
+    0x000038f6   0x00000002   Code   RO          139    i.power_on          mmc.o
+    0x000038f8   0x00000078   Code   RO          140    i.rcvr_datablock    mmc.o
+    0x00003970   0x00000014   Code   RO          141    i.rcvr_spi          mmc.o
+    0x00003984   0x00000020   Code   RO          142    i.select            mmc.o
+    0x000039a4   0x0000008e   Code   RO          143    i.send_cmd          mmc.o
+    0x00003a32   0x00000002   PAD
+    0x00003a34   0x000000cc   Code   RO         1587    i.setSSPclock       lpc17xx_ssp.o
+    0x00003b00   0x00000030   Code   RO         1431    i.set_OpenDrainMode  lpc17xx_pinsel.o
+    0x00003b30   0x00000040   Code   RO         1432    i.set_PinFunc       lpc17xx_pinsel.o
+    0x00003b70   0x00000040   Code   RO         1433    i.set_ResistorMode  lpc17xx_pinsel.o
+    0x00003bb0   0x00000028   Code   RO          256    i.spi_set_speed     ssp.o
+    0x00003bd8   0x0000000a   Code   RO          257    i.sspClockFast      ssp.o
+    0x00003be2   0x0000000a   Code   RO          258    i.sspClockSlow      ssp.o
+    0x00003bec   0x000000a8   Code   RO          259    i.sspInit           ssp.o
+    0x00003c94   0x00000030   Code   RO          260    i.sspReceive        ssp.o
+    0x00003cc4   0x00000040   Code   RO          261    i.sspSend           ssp.o
+    0x00003d04   0x00000224   Code   RO         1885    i.uart_set_divisors  lpc17xx_uart.o
+    0x00003f28   0x00000028   Code   RO          144    i.wait_ready        mmc.o
+    0x00003f50   0x0000005e   Code   RO          145    i.xmit_datablock    mmc.o
+    0x00003fae   0x0000000c   Code   RO          146    i.xmit_spi          mmc.o
+    0x00003fba   0x000000a3   Data   RO          557    .constdata          usbdesc.o
+    0x0000405d   0x00000003   PAD
+    0x00004060   0x00000040   Data   RO          800    .constdata          usbuser.o
+    0x000040a0   0x00000044   Data   RO         1886    .constdata          lpc17xx_uart.o
+    0x000040e4   0x0000000d   Data   RO         2113    .constdata          usbhost_lpc17xx.o
+    0x000040f1   0x00000003   PAD
+    0x000040f4   0x00000020   Data   RO         2539    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x10000000, Size: 0x00002808, Max: 0x00008000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10000000   0x0000000c   Data   RW            8    .data               main.o
+    0x1000000c   0x00000005   Data   RW          147    .data               mmc.o
+    0x10000011   0x00000003   PAD
+    0x10000014   0x00000012   Data   RW          341    .data               mscuser.o
+    0x10000026   0x00000002   PAD
+    0x10000028   0x00000024   Data   RW          467    .data               usbcore.o
+    0x1000004c   0x00000008   Data   RW          603    .data               usbhw.o
+    0x10000054   0x00000028   Data   RW          916    .data               debug_frmwrk.o
+    0x1000007c   0x00000004   Data   RW         2053    .data               system_lpc17xx.o
+    0x10000080   0x00000038   Data   RW         2114    .data               usbhost_lpc17xx.o
+    0x100000b8   0x00000004   Data   RW         2517    .data               mc_w.l(stdout.o)
+    0x100000bc   0x0000226c   Zero   RW          340    .bss                mscuser.o
+    0x10002328   0x00000040   Zero   RW          466    .bss                usbcore.o
+    0x10002368   0x00000080   Zero   RW          601    .bss                usbhw.o
+    0x100023e8   0x00000200   Zero   RW         2081    STACK               startup_lpc17xx.o
+    0x100025e8   0x00000220   Zero   RW          604    USB_RAM             usbhw.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+      1096        128          0         40          0       8410   debug_frmwrk.o
+       288         42          0          0          0       2517   lpc17xx_clkpwr.o
+       158         10          0          0          0       3645   lpc17xx_gpio.o
+         4          0          0          0          0        923   lpc17xx_libcfg_default.o
+       212         14          0          0          0       3031   lpc17xx_pinsel.o
+       544        224          0          0          0       3150   lpc17xx_ssp.o
+      1660        100         68          0          0       7832   lpc17xx_uart.o
+       604        188          0         12          0      54953   main.o
+      1886         88          0          5          0      10771   mmc.o
+      2072        256          0         18       8812      12014   mscuser.o
+       340         30          0          0          0      10343   ssp.o
+        40         12        204          0        512       1064   startup_lpc17xx.o
+       352         70          0          4          0        867   system_lpc17xx.o
+      2110        224          0         36         64      16136   usbcore.o
+         0          0        163          0          0        725   usbdesc.o
+      1626        302         13         56          0      27125   usbhost_lpc17xx.o
+      2056        428          0          8        672      27939   usbhw.o
+        40          0         64          0          0       2059   usbuser.o
+
+    ----------------------------------------------------------------------
+     15110       2116        550        184      10060     193504   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        22          0          6          5          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         8          4          0          0          0          0   entry8.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+        30          0          0          0          0         68   llshl.o
+        32          0          0          0          0         68   llushr.o
+       752         54          0          0          0        184   printf5.o
+         0          0          0          4          0          0   stdout.o
+        98          0          0          0          0         92   uldiv.o
+
+    ----------------------------------------------------------------------
+      1000         70          0          4          0        480   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       998         70          0          4          0        480   mc_w.l
+
+    ----------------------------------------------------------------------
+      1000         70          0          4          0        480   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     16110       2186        550        188      10060     186912   Grand Totals
+     16110       2186        550        188      10060     186912   ELF Image Totals
+     16110       2186        550        188          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                16660 (  16.27kB)
+    Total RW  Size (RW Data + ZI Data)             10248 (  10.01kB)
+    Total ROM Size (Code + RO Data + RW Data)      16848 (  16.45kB)
+
+==============================================================================
+

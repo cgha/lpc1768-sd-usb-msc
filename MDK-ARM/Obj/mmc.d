@@ -1,0 +1,15 @@
+.\Obj\mmc.o: ..\USER\mmc.c
+.\Obj\mmc.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_gpio.h
+.\Obj\mmc.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\LPC17xx.h
+.\Obj\mmc.o: C:\Keil\ARM\CMSIS\Include\core_cm3.h
+.\Obj\mmc.o: C:\Keil\ARM\RV31\Inc\stdint.h
+.\Obj\mmc.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\Obj\mmc.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\Obj\mmc.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.h
+.\Obj\mmc.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc_types.h
+.\Obj\mmc.o: ..\USER\diskio.h
+.\Obj\mmc.o: ..\USER\integer.h
+.\Obj\mmc.o: ..\USER\gpio.h
+.\Obj\mmc.o: ..\USER\ssp.h
+.\Obj\mmc.o: ..\USER\config.h
+.\Obj\mmc.o: ..\USER\USB\memory.h

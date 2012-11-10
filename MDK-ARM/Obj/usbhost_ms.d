@@ -1,0 +1,15 @@
+.\Obj\usbhost_ms.o: ..\..\lpc17xx_chanfat_mthomas\project\Libraries\USBHostLite\usbhost_ms.c
+.\Obj\usbhost_ms.o: ..\..\lpc17xx_chanfat_mthomas\project\Libraries\USBHostLite\usbhost_ms.h
+.\Obj\usbhost_ms.o: ..\..\lpc17xx_chanfat_mthomas\project\Libraries\USBHostLite\usbhost_inc.h
+.\Obj\usbhost_ms.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc_types.h
+.\Obj\usbhost_ms.o: C:\Keil\ARM\RV31\Inc\stdint.h
+.\Obj\usbhost_ms.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\lpc17xx.h
+.\Obj\usbhost_ms.o: C:\Keil\ARM\CMSIS\Include\core_cm3.h
+.\Obj\usbhost_ms.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\Obj\usbhost_ms.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\Obj\usbhost_ms.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.h
+.\Obj\usbhost_ms.o: ..\..\lpc17xx_chanfat_mthomas\project\Libraries\USBHostLite\usbhost_cpu.h
+.\Obj\usbhost_ms.o: ..\..\lpc17xx_chanfat_mthomas\project\Libraries\USBHostLite\usbhost_err.h
+.\Obj\usbhost_ms.o: ..\..\lpc17xx_chanfat_mthomas\project\Libraries\USBHostLite\usbhost_lpc17xx.h
+.\Obj\usbhost_ms.o: ..\..\lpc17xx_chanfat_mthomas\project\Libraries\USBHostLite\usbhost_inc.h
+.\Obj\usbhost_ms.o: ..\..\lpc17xx_chanfat_mthomas\project\Libraries\USBHostLite\usbhost_ms.h

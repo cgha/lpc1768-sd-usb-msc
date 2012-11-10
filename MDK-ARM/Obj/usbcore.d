@@ -1,0 +1,11 @@
+.\Obj\usbcore.o: ..\USER\USB\usbcore.c
+.\Obj\usbcore.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc_types.h
+.\Obj\usbcore.o: C:\Keil\ARM\RV31\Inc\stdint.h
+.\Obj\usbcore.o: ..\USER\USB\usb.h
+.\Obj\usbcore.o: ..\USER\USB\usbcfg.h
+.\Obj\usbcore.o: ..\USER\USB\usbhw.h
+.\Obj\usbcore.o: ..\USER\USB\usbcore.h
+.\Obj\usbcore.o: ..\USER\USB\usbdesc.h
+.\Obj\usbcore.o: ..\USER\USB\usbuser.h
+.\Obj\usbcore.o: ..\USER\USB\msc.h
+.\Obj\usbcore.o: ..\USER\USB\mscuser.h

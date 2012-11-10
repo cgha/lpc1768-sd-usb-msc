@@ -1,0 +1,12 @@
+.\Obj\comm.o: ..\..\lpc17xx_chanfat_mthomas\project\comm.c
+.\Obj\comm.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\lpc17xx.h
+.\Obj\comm.o: C:\Keil\ARM\CMSIS\Include\core_cm3.h
+.\Obj\comm.o: C:\Keil\ARM\RV31\Inc\stdint.h
+.\Obj\comm.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\Obj\comm.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\Obj\comm.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.h
+.\Obj\comm.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_uart.h
+.\Obj\comm.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc_types.h
+.\Obj\comm.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_nvic.h
+.\Obj\comm.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_pinsel.h
+.\Obj\comm.o: ..\..\lpc17xx_chanfat_mthomas\project\comm.h

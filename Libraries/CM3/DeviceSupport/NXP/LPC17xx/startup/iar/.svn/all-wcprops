@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/lpclib/!svn/ver/4571/trunk/cmsis/lpc17xx/Core/CM3/DeviceSupport/NXP/LPC17xx/startup/iar
+END
+startup_LPC17xx.s
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/lpclib/!svn/ver/4571/trunk/cmsis/lpc17xx/Core/CM3/DeviceSupport/NXP/LPC17xx/startup/iar/startup_LPC17xx.s
+END

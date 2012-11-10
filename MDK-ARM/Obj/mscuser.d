@@ -1,0 +1,17 @@
+.\Obj\mscuser.o: ..\USER\USB\mscuser.c
+.\Obj\mscuser.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\LPC17xx.h
+.\Obj\mscuser.o: C:\Keil\ARM\CMSIS\Include\core_cm3.h
+.\Obj\mscuser.o: C:\Keil\ARM\RV31\Inc\stdint.h
+.\Obj\mscuser.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\Obj\mscuser.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\Obj\mscuser.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.h
+.\Obj\mscuser.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc_types.h
+.\Obj\mscuser.o: ..\USER\USB\usb.h
+.\Obj\mscuser.o: ..\USER\USB\msc.h
+.\Obj\mscuser.o: ..\USER\USB\usbcfg.h
+.\Obj\mscuser.o: ..\USER\USB\usbhw.h
+.\Obj\mscuser.o: ..\USER\USB\usbcore.h
+.\Obj\mscuser.o: ..\USER\USB\mscuser.h
+.\Obj\mscuser.o: ..\USER\USB\memory.h
+.\Obj\mscuser.o: ..\USER\diskio.h
+.\Obj\mscuser.o: ..\USER\integer.h

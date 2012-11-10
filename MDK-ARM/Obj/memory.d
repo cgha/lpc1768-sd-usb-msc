@@ -1,0 +1,16 @@
+.\Obj\memory.o: ..\USER\USB\memory.c
+.\Obj\memory.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\LPC17xx.h
+.\Obj\memory.o: C:\Keil\ARM\CMSIS\Include\core_cm3.h
+.\Obj\memory.o: C:\Keil\ARM\RV31\Inc\stdint.h
+.\Obj\memory.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\Obj\memory.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\Obj\memory.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.h
+.\Obj\memory.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc_types.h
+.\Obj\memory.o: ..\USER\USB\usb.h
+.\Obj\memory.o: ..\USER\USB\usbcfg.h
+.\Obj\memory.o: ..\USER\USB\usbhw.h
+.\Obj\memory.o: ..\USER\USB\usbcore.h
+.\Obj\memory.o: ..\USER\USB\mscuser.h
+.\Obj\memory.o: ..\USER\USB\memory.h
+.\Obj\memory.o: ..\USER\lpc17xx_libcfg.h
+.\Obj\memory.o: ..\Libraries\LPC1700CMSIS_Firmware_Library\include\lpc17xx_nvic.h

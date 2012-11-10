@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source
+END
+lpc17xx_exti.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_exti.c
+END
+lpc17xx_uart.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_uart.c
+END
+lpc17xx_i2c.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_i2c.c
+END
+lpc17xx_qei.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_qei.c
+END
+lpc17xx_timer.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_timer.c
+END
+lpc17xx_mcpwm.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_mcpwm.c
+END
+lpc17xx_dac.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_dac.c
+END
+lpc17xx_adc.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_adc.c
+END
+lpc17xx_gpdma.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_gpdma.c
+END
+debug_frmwrk.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/debug_frmwrk.c
+END
+lpc17xx_rtc.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_rtc.c
+END
+lpc17xx_systick.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_systick.c
+END
+lpc17xx_pinsel.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_pinsel.c
+END
+lpc17xx_libcfg_default.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_libcfg_default.c
+END
+lpc17xx_spi.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_spi.c
+END
+lpc17xx_i2s.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_i2s.c
+END
+lpc17xx_gpio.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_gpio.c
+END
+lpc17xx_rit.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_rit.c
+END
+lpc17xx_wdt.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_wdt.c
+END
+lpc17xx_nvic.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_nvic.c
+END
+lpc17xx_can.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_can.c
+END
+lpc17xx_clkpwr.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_clkpwr.c
+END
+lpc17xx_pwm.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_pwm.c
+END
+lpc17xx_emac.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_emac.c
+END
+lpc17xx_ssp.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Drivers/source/lpc17xx_ssp.c
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/lpclib/!svn/ver/4571/trunk/cmsis/lpc17xx/Drivers/source/makefile
+END

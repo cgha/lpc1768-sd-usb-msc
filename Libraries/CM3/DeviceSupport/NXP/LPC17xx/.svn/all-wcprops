@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Core/CM3/DeviceSupport/NXP/LPC17xx
+END
+system_LPC17xx.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/lpclib/!svn/ver/4571/trunk/cmsis/lpc17xx/Core/CM3/DeviceSupport/NXP/LPC17xx/system_LPC17xx.h
+END
+system_LPC17xx.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/lpclib/!svn/ver/4571/trunk/cmsis/lpc17xx/Core/CM3/DeviceSupport/NXP/LPC17xx/system_LPC17xx.c
+END
+LPC17xx.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/lpclib/!svn/ver/7584/trunk/cmsis/lpc17xx/Core/CM3/DeviceSupport/NXP/LPC17xx/LPC17xx.h
+END

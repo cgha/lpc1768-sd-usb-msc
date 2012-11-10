@@ -1,0 +1,43 @@
+*** Creating Trace Output File '.\Obj\LPC1768-Mini-DK.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\obj\main.o"'
+### List of Objects: adding '".\obj\mmc.o"'
+### List of Objects: adding '".\obj\ssp.o"'
+### List of Objects: adding '".\obj\mscuser.o"'
+### List of Objects: adding '".\obj\usbcore.o"'
+### List of Objects: adding '".\obj\usbdesc.o"'
+### List of Objects: adding '".\obj\usbhw.o"'
+### List of Objects: adding '".\obj\usbuser.o"'
+### List of Objects: adding '".\obj\debug_frmwrk.o"'
+### List of Objects: adding '".\obj\lpc17xx_adc.o"'
+### List of Objects: adding '".\obj\lpc17xx_clkpwr.o"'
+### List of Objects: adding '".\obj\lpc17xx_gpdma.o"'
+### List of Objects: adding '".\obj\lpc17xx_gpio.o"'
+### List of Objects: adding '".\obj\lpc17xx_libcfg_default.o"'
+### List of Objects: adding '".\obj\lpc17xx_nvic.o"'
+### List of Objects: adding '".\obj\lpc17xx_pinsel.o"'
+### List of Objects: adding '".\obj\lpc17xx_spi.o"'
+### List of Objects: adding '".\obj\lpc17xx_ssp.o"'
+### List of Objects: adding '".\obj\lpc17xx_systick.o"'
+### List of Objects: adding '".\obj\lpc17xx_timer.o"'
+### List of Objects: adding '".\obj\lpc17xx_uart.o"'
+### List of Objects: adding '".\obj\core_cm3.o"'
+### List of Objects: adding '".\obj\system_lpc17xx.o"'
+### List of Objects: adding '".\obj\startup_lpc17xx.o"'
+### List of Objects: adding '".\obj\usbhost_lpc17xx.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\obj\main.o" ".\obj\mmc.o" ".\obj\ssp.o" ".\obj\mscuser.o" ".\obj\usbcore.o" ".\obj\usbdesc.o" ".\obj\usbhw.o" ".\obj\usbuser.o" ".\obj\debug_frmwrk.o" ".\obj\lpc17xx_adc.o" ".\obj\lpc17xx_clkpwr.o" ".\obj\lpc17xx_gpdma.o" ".\obj\lpc17xx_gpio.o" ".\obj\lpc17xx_libcfg_default.o" ".\obj\lpc17xx_nvic.o" ".\obj\lpc17xx_pinsel.o" ".\obj\lpc17xx_spi.o" ".\obj\lpc17xx_ssp.o" ".\obj\lpc17xx_systick.o" ".\obj\lpc17xx_timer.o" ".\obj\lpc17xx_uart.o" ".\obj\core_cm3.o" ".\obj\system_lpc17xx.o" ".\obj\startup_lpc17xx.o" ".\obj\usbhost_lpc17xx.o" --library_type=microlib --strict --scatter ".\Obj\LPC1768-Mini-DK.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\List\LPC1768-Mini-DK.map" -o ".\Obj\LPC1768-Mini-DK.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\Obj\LPC1768-Mini-DK.axf'
+### ADS-LD Command File: '.\Obj\LPC1768-Mini-DK.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\Obj\LPC1768-Mini-DK.lnp', Handle=0x00000344
+### Writing '.lnp' file
+### ADS-LD Command file '.\Obj\LPC1768-Mini-DK.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.
